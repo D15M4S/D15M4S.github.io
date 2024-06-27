@@ -1,10 +1,12 @@
 ---
 ---
 
-@import 'main
+@import 'main';
+
 {%- if jekyll.environment == 'production' -%}
-  .bundle
+  @import 'dist/bootstrap';
+{%- else -%}
+  @import 'node_modules/bootstrap/scss/bootstrap';
 {%- endif -%}
-';
 
 /* append your custom style below */
