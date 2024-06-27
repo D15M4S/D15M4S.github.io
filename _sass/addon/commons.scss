@@ -1,3 +1,6 @@
+
+
+
 /* The common styles */
 
 html {
@@ -728,7 +731,7 @@ $btn-mb: 0.5rem;
   }
 
   .site-title {
-    font-family: inherit;
+    font-family: $font-family-title;
     font-weight: 900;
     font-size: 1.75rem;
     line-height: 1.2;
@@ -745,14 +748,20 @@ $btn-mb: 0.5rem;
   }
 
   .site-subtitle {
+    font-family: $font-family-title;
     font-size: 95%;
     color: var(--site-subtitle-color);
     margin-top: 0.25rem;
-    word-spacing: 1px;
+    // 추가
+    margin-right: 0.9rem;
+    // 조정
+    word-spacing: 0.5px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    font-style: normal !important;
+
   }
 
   ul {
