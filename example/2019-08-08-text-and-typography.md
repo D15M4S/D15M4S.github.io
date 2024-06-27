@@ -1,16 +1,15 @@
 ---
-title: Text and Typography
-description: Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.
-author: cotes
-date: 2019-08-08 11:33:00 +0800
-categories: [Blogging, Demo]
-tags: [typography]
+title: 깃허브 블로그 문법
+description: 블로그 마크다운 사용법을 정리했습니다.
+author: D15M4S
+categories: [깃허브블로그]
+tags: [깃허브블로그]
 pin: true
 math: true
 mermaid: true
 image:
-  path: /commons/devices-mockup.png
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
+  path: https://i.pinimg.com/564x/06/b4/d6/06b4d61164c7e0a83d7a6cbe608e9e93.jpg
+#  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
   alt: Responsive rendering of Chirpy theme on multiple devices.
 ---
 
@@ -33,7 +32,7 @@ image:
 
 ## Paragraph
 
-Quisque egestas convallis ipsum, ut sollicitudin risus tincidunt a. Maecenas interdum malesuada egestas. Duis consectetur porta risus, sit amet vulputate urna facilisis ac. Phasellus semper dui non purus ultrices sodales. Aliquam ante lorem, ornare a feugiat ac, finibus nec mauris. Vivamus ut tristique nisi. Sed vel leo vulputate, efficitur risus non, posuere mi. Nullam tincidunt bibendum rutrum. Proin commodo ornare sapien. Vivamus interdum diam sed sapien blandit, sit amet aliquam risus mattis. Nullam arcu turpis, mollis quis laoreet at, placerat id nibh. Suspendisse venenatis eros eros.
+강아지의 외모는 사람들에게 자연스럽게 귀엽게 느껴지도록 설계된 것 같습니다. 큰 눈, 동그란 얼굴, 작은 코, 그리고 말랑말랑한 털은 강아지를 아기처럼 보이게 합니다. 이런 특성은 인간이 본능적으로 보호하고 싶어지는 감정을 일으킵니다. 이는 '아기 도식'이라고 불리는 개념으로, 큰 눈과 동그란 얼굴을 가진 존재에 대해 우리가 보호 본능을 느끼도록 만드는 생물학적 반응입니다.
 
 ## Lists
 
@@ -51,18 +50,18 @@ Quisque egestas convallis ipsum, ut sollicitudin risus tincidunt a. Maecenas int
 
 ### ToDo list
 
-- [ ] Job
-  - [x] Step 1
-  - [x] Step 2
-  - [ ] Step 3
+- [ ] 오늘의 업무
+  - [x] 강아지 빗질하기
+  - [x] 강아지 산책시키기
+  - [ ] 강아지 간식주기
 
 ### Description list
 
-Sun
-: the star around which the earth orbits
+강아지
+: 강아지 강아지 강아지 강아지 강아지 멍멍
 
-Moon
-: the natural satellite of the earth, visible by reflected light from the sun
+고양이
+: 꽁꽁 얼어붙은 한강 위로 고양이가 지나가고 있습니다
 
 ## Block Quote
 
@@ -166,21 +165,21 @@ $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
 ### Default (with caption)
 
-![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" }
+![Desktop View](https://i.pinimg.com/564x/06/b4/d6/06b4d61164c7e0a83d7a6cbe608e9e93.jpg){: width="972" height="589" }
 _Full screen width and center alignment_
 
 ### Left aligned
 
-![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" .w-75 .normal}
+![Desktop View](https://i.pinimg.com/564x/06/b4/d6/06b4d61164c7e0a83d7a6cbe608e9e93.jpg){: width="972" height="589" .w-75 .normal}
 
 ### Float to left
 
-![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" .w-50 .left}
+![Desktop View](https://i.pinimg.com/564x/06/b4/d6/06b4d61164c7e0a83d7a6cbe608e9e93.jpg){: width="972" height="589" .w-50 .left}
 Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.
 
 ### Float to right
 
-![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" .w-50 .right}
+![Desktop View](https://i.pinimg.com/564x/06/b4/d6/06b4d61164c7e0a83d7a6cbe608e9e93.jpg){: width="972" height="589" .w-50 .right}
 Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.
 
 ### Dark/Light mode & Shadow
@@ -192,7 +191,9 @@ The image below will toggle dark/light mode based on theme preference, notice it
 
 ## Video
 
-{% include embed/youtube.html id='Balreaj8Yqs' %}
+<div class="video-container">
+  <iframe width="560" height="315" src="https://youtu.be/XpmhH4vGYlI" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ## Reverse Footnote
 
