@@ -2,11 +2,7 @@
 ---
 
 @import 'main';
-
-{%- if jekyll.environment == 'production' -%}
-  @import 'dist/bootstrap';
-{%- else -%}
-  @import 'node_modules/bootstrap/scss/bootstrap';
-{%- endif -%}
+@import 'node_modules/bootstrap/scss/bootstrap';
 
 /* append your custom style below */
+
