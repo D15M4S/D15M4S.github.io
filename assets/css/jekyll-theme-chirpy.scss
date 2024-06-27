@@ -5,5 +5,18 @@
 @import 'bootstrap';
 
 /* append your custom style below */
+
+:root {
+  --card-link-color: inherit; /* 카드 내 링크의 기본 텍스트 색상 유지 */
+  --card-link-hover-color: inherit; /* 카드 내 링크 마우스 오버 시 텍스트 색상 유지 */
+}
+.card a {
+  text-decoration: none; /* 링크 밑줄 제거 */
+  color: var(--card-link-color); /* 링크 텍스트 색상 설정 */
+}
+.card a:hover {
+  text-decoration: none; /* 링크 마우스 오버 시 밑줄 제거 */
+  color: var(--card-link-hover-color); /* 링크 마우스 오버 시 텍스트 색상 설정 */
+}
 /* append your custom style below */
 

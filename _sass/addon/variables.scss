@@ -2,6 +2,12 @@
  * The SCSS variables
  */
 
+/* google font */
+//Gowun Dodum
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+//Noto Sans KR
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+
 /* sidebar */
 
 $sidebar-width: 260px !default; /* the basic width */
@@ -29,5 +35,6 @@ $code-icon-width: 1.75rem !default;
 
 /* fonts */
 
-$font-family-base: 'Source Sans Pro', 'Microsoft Yahei', sans-serif !default;
-$font-family-heading: Lato, 'Microsoft Yahei', sans-serif !default;
+$font-family-base: 'Noto Sans KR', 'Microsoft Yahei', sans-serif !default;
+$font-family-heading: 'Noto Sans KR', 'Microsoft Yahei', sans-serif !default;
+$font-family-title: 'Noto Sans KR', 'Microsoft Yahei', sans-serif !default;
