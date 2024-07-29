@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>D15M4S</title>
   <subtitle>박종범(D15M4S)의 기술블로그 입니다. 학습한 내용을 기록합니다 :D</subtitle>
-  <updated>2024-06-28T13:54:27+09:00</updated>
+  <updated>2024-07-29T09:26:04+09:00</updated>
   <author>
     <name>박종범</name>
     <uri>http://localhost:4000/</uri>
@@ -20,49 +20,121 @@
 
   
   <entry>
-    <title>코딩테스트의 법도를 찾아서</title>
-    <link href="http://localhost:4000/posts/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A7%88%EC%9D%8C%EA%B0%80%EC%A7%90/" rel="alternate" type="text/html" title="코딩테스트의 법도를 찾아서" />
-    <published>2024-06-27T00:00:00+09:00</published>
+    <title>정보처리기사 실기 정리</title>
+    <link href="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-%EC%A0%95%EB%A6%AC/" rel="alternate" type="text/html" title="정보처리기사 실기 정리" />
+    <published>2024-07-29T00:00:00+09:00</published>
   
-    <updated>2024-06-27T00:00:00+09:00</updated>
+    <updated>2024-07-29T00:00:00+09:00</updated>
   
-    <id>http://localhost:4000/posts/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A7%88%EC%9D%8C%EA%B0%80%EC%A7%90/</id>
-    <content src="http://localhost:4000/posts/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A7%88%EC%9D%8C%EA%B0%80%EC%A7%90/" />
+    <id>http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-%EC%A0%95%EB%A6%AC/</id>
+    <content src="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-%EC%A0%95%EB%A6%AC/" />
     <author>
       <name>dismas</name>
     </author>
 
   
     
-    <category term="코딩테스트" />
+    <category term="자격증" />
     
   
 
-  <summary>코딩테스트에 앞서 올바른 법도(?)를 가져보자</summary>
+  <summary>2일동안 학습하며 필기했던 내용들, 특히 집중했던 부분을 정리했다.</summary>
 
   </entry>
 
   
   <entry>
-    <title>깃허브 블로그 문법</title>
-    <link href="http://localhost:4000/posts/%EA%B9%83%ED%97%88%EB%B8%8C-%EB%B8%94%EB%A1%9C%EA%B7%B8/" rel="alternate" type="text/html" title="깃허브 블로그 문법" />
-    <published>2024-06-27T00:00:00+09:00</published>
+    <title>정보처리기사 실기 - 09. 소프트웨어 개발 보안 구축</title>
+    <link href="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-9-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EA%B0%9C%EB%B0%9C-%EB%B3%B4%EC%95%88-%EA%B5%AC%EC%B6%95/" rel="alternate" type="text/html" title="정보처리기사 실기 - 09. 소프트웨어 개발 보안 구축" />
+    <published>2024-07-29T00:00:00+09:00</published>
   
-    <updated>2024-06-27T21:18:19+09:00</updated>
+    <updated>2024-07-29T00:00:00+09:00</updated>
   
-    <id>http://localhost:4000/posts/%EA%B9%83%ED%97%88%EB%B8%8C-%EB%B8%94%EB%A1%9C%EA%B7%B8/</id>
-    <content src="http://localhost:4000/posts/%EA%B9%83%ED%97%88%EB%B8%8C-%EB%B8%94%EB%A1%9C%EA%B7%B8/" />
+    <id>http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-9-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EA%B0%9C%EB%B0%9C-%EB%B3%B4%EC%95%88-%EA%B5%AC%EC%B6%95/</id>
+    <content src="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-9-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EA%B0%9C%EB%B0%9C-%EB%B3%B4%EC%95%88-%EA%B5%AC%EC%B6%95/" />
     <author>
-      <name>D15M4S</name>
+      <name>dismas</name>
     </author>
 
   
     
-    <category term="깃허브블로그" />
+    <category term="자격증" />
     
   
 
-  <summary>블로그 마크다운 사용법을 정리했습니다.</summary>
+  <summary>중요도 ★★★★☆ - 보안은 원래 많이 어려웠다...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>정보처리기사 실기 - 08.SQL 응용</title>
+    <link href="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-8-SQL%EC%9D%91%EC%9A%A9/" rel="alternate" type="text/html" title="정보처리기사 실기 - 08.SQL 응용" />
+    <published>2024-07-29T00:00:00+09:00</published>
+  
+    <updated>2024-07-29T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-8-SQL%EC%9D%91%EC%9A%A9/</id>
+    <content src="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-8-SQL%EC%9D%91%EC%9A%A9/" />
+    <author>
+      <name>dismas</name>
+    </author>
+
+  
+    
+    <category term="자격증" />
+    
+  
+
+  <summary>중요도 ★★★★★ - 계산 문제 3대장 중 하나</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>정보처리기사 실기 - 07. 애플리케이션 테스트 관리</title>
+    <link href="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-7-%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%80%EB%A6%AC/" rel="alternate" type="text/html" title="정보처리기사 실기 - 07. 애플리케이션 테스트 관리" />
+    <published>2024-07-29T00:00:00+09:00</published>
+  
+    <updated>2024-07-29T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-7-%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%80%EB%A6%AC/</id>
+    <content src="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-7-%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%80%EB%A6%AC/" />
+    <author>
+      <name>dismas</name>
+    </author>
+
+  
+    
+    <category term="자격증" />
+    
+  
+
+  <summary>중요도 ★★☆☆☆ - 처음 보는 내용이 많아 혼란스러운 파트</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>2024-2회차 정보처리기사 실기 `2일의 전사` 후기</title>
+    <link href="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-%ED%9B%84%EA%B8%B0/" rel="alternate" type="text/html" title="2024-2회차 정보처리기사 실기 `2일의 전사` 후기" />
+    <published>2024-07-28T00:00:00+09:00</published>
+  
+    <updated>2024-07-28T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-%ED%9B%84%EA%B8%B0/</id>
+    <content src="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-%ED%9B%84%EA%B8%B0/" />
+    <author>
+      <name>dismas</name>
+    </author>
+
+  
+    
+    <category term="자격증" />
+    
+  
+
+  <summary>준비기간 총 2일, 하얗게 불태웠다... 하얗게...</summary>
 
   </entry>
 
