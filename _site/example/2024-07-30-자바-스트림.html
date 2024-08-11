@@ -1,0 +1,180 @@
+<h2 id="개요">개요</h2>
+<p>내게 스트림은 가깝고도 먼 존재였다. 가독성을 위해 스트림을 사용해야 한다고 늘 생각해왔지만, 스트림을 공부하기 위해 필요한 사전 지식이 너무나도 많았다.</p>
+<ul>
+  <li>래퍼 클래스와 Optional 객체</li>
+  <li>제네릭 프레임워크</li>
+  <li>컬렉션 프레임워크</li>
+  <li>익명클래스 / 내부클래스 / 람다 / 메서드 표현식</li>
+</ul>
+
+<p>이 모든 것을 끝내고 이젠, 당당하게 스트림을 향해 걸어도 되겠다는 생각이 들어 해당 포스트를 작성하게 되었다.</p>
+
+<h2 id="1-스트림stream-무엇일까">1. 스트림(stream) 무엇일까?</h2>
+<p>필자는 반복되는 작업을 통해 자료를 가공해야 할 경우 <code class="language-plaintext highlighter-rouge">for-each</code>문과 <code class="language-plaintext highlighter-rouge">iterator</code>를 주로 사용했다. 하지만 다음 방법은 길어지면 길어질 수록 코드를 이해하기가 까다로워진다는 한계가 있었다.</p>
+
+<p>이러한 문제점을 해결하기 위해 등장한 것이 Stream이다.</p>
+
+<blockquote>
+  <p>데이터 소스를 추상화하여 일련의 요소에 대한 다양한 연산을 지원.</p>
+</blockquote>
+
+<p>말이 살짝 어렵다. 조금 더 자세히 풀어보자.</p>
+
+<p>이를 Stream으로 개선하는 과정을 통해 stream을 사용하는 것에 비해서 성능상 이점을 가져갈 수 있으나, <strong>가독성과 구현시간에 있어 한계가 있다.</strong></p>
+
+<h2 id="2-이전-방법들과의-비교">2. 이전 방법들과의 비교</h2>
+
+<p><img src="assets/img/java/stream-1.png" alt="image1" /></p>
+
+<div style="text-align: center;"><b>최근에 개발했던 어플리케이션의 출석체크 기능을 토대로 설명해보자!</b></div>
+
+<h4 id="before--for-each와-iterator-사용">Before : for-each와 iterator 사용</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="nc">WeeklyAttendanceDto</span> <span class="nf">toAttendanceDto</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Attendance</span><span class="o">&gt;</span> <span class="n">attendances</span><span class="o">)</span> <span class="o">{</span>
+  <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Boolean</span><span class="o">&gt;</span> <span class="n">attendanceList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;(</span><span class="nc">Collections</span><span class="o">.</span><span class="na">nCopies</span><span class="o">(</span><span class="mi">7</span><span class="o">,</span> <span class="kc">false</span><span class="o">));</span>
+
+  <span class="c1">// .getDayOfWeek().getValue() 요일 index를 추출하기 위한 메서드이다.</span>
+  <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">uniqueDays</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashSet</span><span class="o">&lt;&gt;();</span>
+  <span class="k">for</span> <span class="o">(</span><span class="nc">Attendance</span> <span class="n">attendance</span> <span class="o">:</span> <span class="n">attendances</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">attendance</span><span class="o">.</span><span class="na">getDay</span><span class="o">().</span><span class="na">getDate</span><span class="o">().</span><span class="na">getDayOfWeek</span><span class="o">().</span><span class="na">getValue</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="n">uniqueDays</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">index</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">:</span> <span class="n">uniqueDays</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">attendanceList</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">index</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="k">return</span> <span class="nc">WeeklyAttendanceDto</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">attendances</span><span class="o">(</span><span class="n">attendanceList</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>다음 코드는 클라이언트에게 사용자의 금주 출석체크 여부를 전달하기 위해 설계된 Mapper 객체이다.</p>
+<ul>
+  <li>Attendance - 출석 객체(LocalDate), 사용자가 출석하면 해당 출석 객체가 생성된다. 출석 객체가 존재하면 해당 사용자는 해당 일에 출석한 것으로 간주한다.</li>
+</ul>
+
+<p>해당 코드는 3가지 로직으로 분류되어 있다.</p>
+<ol>
+  <li>파라미터로 이번 주에 해당되는 출석 객체를 반환 받는다.</li>
+  <li>출석 객체가 각각 어떤 요일에 해당되는지 파악한다. ex) 2024-07-30 = 화요일</li>
+  <li>요일에 해당되는 인덱스 (ex) 화요일 = 1번)에 true 값을 넣어서 DTO를 클라이언트에게 반환한다.</li>
+</ol>
+
+<p>각 로직은 각기 다른 2개의 for문과 return문에 구현되고 있다.</p>
+
+<h4 id="refactoring--stream-사용">Refactoring : Stream 사용</h4>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="nc">WeeklyAttendanceDto</span> <span class="nf">toAttendanceDto</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Attendance</span><span class="o">&gt;</span> <span class="n">attendances</span><span class="o">){</span>
+  <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Boolean</span><span class="o">&gt;</span> <span class="n">attendanceList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;(</span><span class="nc">Collections</span><span class="o">.</span><span class="na">nCopies</span><span class="o">(</span><span class="mi">7</span><span class="o">,</span> <span class="kc">false</span><span class="o">));</span>
+
+  <span class="n">attendances</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">attendance</span> <span class="o">-&gt;</span> <span class="n">attendance</span><span class="o">.</span><span class="na">getDay</span><span class="o">().</span><span class="na">getDate</span><span class="o">().</span><span class="na">getDayOfWeek</span><span class="o">().</span><span class="na">getValue</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">distinct</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">index</span> <span class="o">-&gt;</span> <span class="n">attendanceList</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">index</span><span class="o">,</span> <span class="kc">true</span><span class="o">));</span>
+
+  <span class="k">return</span> <span class="nc">WeeklyAttendanceDto</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">attendances</span><span class="o">(</span><span class="n">attendanceList</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>스트림을 공부하며 위 코드를 다음 코드로 리팩토링을 진행했다. 스트림을 사용하면서 다음과 같은 이점을 얻을 수 있었다.</p>
+<ul>
+  <li><strong>명확하고 이해하기 쉽다</strong> - 메서드명을 통해서 로직의 의도를 쉽게 파악할 수 있었다.</li>
+  <li><strong>간결하다</strong> - 2개의 for문으로 구성된 로직을 하나의 과정(Stream)으로 합쳤다.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="rouge-code"><pre>                       .,,uod8B8bou,,.
+              ..,uod8BBBBBBBBBBBBBBBBRPFT?l!i:.
+         ,=m8BBBBBBBBBBBBBBBRPFT?!||||||||||||||
+         !...:!TVBBBRPFT||||||||||!!^^""'   ||||
+         !.......:!?|||||!!^^""'            ||||
+         !.........||||                     ||||
+         !.........||||  W E L C O M E 😆   ||||
+         !.........||||                     ||||
+         !.........||||  T H I S            ||||
+         !.........||||  I S                ||||
+         !.........||||  D 1 5 M 4 S        ||||
+         `.........||||  박 종 범 :D        ,||||
+          .;.......||||               _.-!!|||||
+   .,uodWBBBBb.....||||       _.-!!|||||||||!:'
+!YBBBBBBBBBBBBBBb..!|||:..-!!|||||||!iof68BBBBBb....
+!..YBBBBBBBBBBBBBBb!!||||||||!iof68BBBBBBRPFT?!::   `.
+!....YBBBBBBBBBBBBBBbaaitf68BBBBBBRPFT?!:::::::::     `.
+!......YBBBBBBBBBBBBBBBBBBBRPFT?!::::::;:!^"`;:::       `.
+!........YBBBBBBBBBBRPFT?!::::::::::^''...::::::;         iBBbo.
+`..........YBRPFT?!::::::::::::::::::::::::;iof68bo.      WBBBBbo.
+  `..........:::::::::::::::::::::::;iof688888888888b.     `YBBBP^'
+    `........::::::::::::::::;iof688888888888888888888b.     `
+      `......:::::::::;iof688888888888888888888888888888b.
+        `....:::;iof688888888888888888888888888888888899fT!
+          `..::!8888888888888888888888888888888899fT|!^"'
+            `' !!988888888888888888888888899fT|!^"'
+                `!!8888888888888888899fT|!^"'
+                  `!988888888899fT|!^"'
+                    `!9899fT|!^"'
+                      `!^"'
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="3-스트림-특징">3. 스트림 특징</h2>
+
+<h2 id="4">4.</h2>
