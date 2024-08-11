@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>D15M4S</title>
   <subtitle>박종범(D15M4S)의 기술블로그 입니다. 학습한 내용을 기록합니다 :D</subtitle>
-  <updated>2024-08-11T10:26:20+09:00</updated>
+  <updated>2024-08-11T21:03:45+09:00</updated>
   <author>
     <name>박종범</name>
     <uri>http://localhost:4000/</uri>
@@ -40,7 +40,7 @@
     
   
 
-  <summary>준비 과정, 시험 과정 등 정리</summary>
+  <summary>AWS-SAA(C03)을 준비하면서 기록했던 학습 내용과 과정을 블로그에 정리했다.</summary>
 
   </entry>
 
@@ -66,7 +66,33 @@
     
   
 
-  <summary>이론 Chapter2 - EC2 Basics</summary>
+  <summary>인스턴스 구성 - 인스턴스 타입 - 인스턴스 구매 옵션</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>AWS SAA - 3. EC2 Advance</title>
+    <link href="http://localhost:4000/posts/AWS-SAA-EC2-ADVANCE/" rel="alternate" type="text/html" title="AWS SAA - 3. EC2 Advance" />
+    <published>2024-08-11T00:00:00+09:00</published>
+  
+    <updated>2024-08-11T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/AWS-SAA-EC2-ADVANCE/</id>
+    <content src="http://localhost:4000/posts/AWS-SAA-EC2-ADVANCE/" />
+    <author>
+      <name>D15M4S</name>
+    </author>
+
+  
+    
+    <category term="자격증" />
+    
+    <category term="AWS" />
+    
+  
+
+  <summary>탄력적 IP - EC2 배치그룹 - ENI - Hibernate(최대 절전 방식)</summary>
 
   </entry>
 
@@ -115,30 +141,6 @@
   
 
   <summary>중요도 ★★★★☆ - 보안은 원래 많이 어려웠다...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>정보처리기사 실기 - 08.SQL 응용</title>
-    <link href="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-8-SQL%EC%9D%91%EC%9A%A9/" rel="alternate" type="text/html" title="정보처리기사 실기 - 08.SQL 응용" />
-    <published>2024-07-29T00:00:00+09:00</published>
-  
-    <updated>2024-07-29T09:56:15+09:00</updated>
-  
-    <id>http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-8-SQL%EC%9D%91%EC%9A%A9/</id>
-    <content src="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-8-SQL%EC%9D%91%EC%9A%A9/" />
-    <author>
-      <name>D15M4S</name>
-    </author>
-
-  
-    
-    <category term="자격증" />
-    
-  
-
-  <summary>중요도 ★★★★★ - 계산 문제 3대장 중 하나</summary>
 
   </entry>
 
