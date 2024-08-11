@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>D15M4S</title>
   <subtitle>박종범(D15M4S)의 기술블로그 입니다. 학습한 내용을 기록합니다 :D</subtitle>
-  <updated>2024-08-11T21:03:45+09:00</updated>
+  <updated>2024-08-11T21:33:52+09:00</updated>
   <author>
     <name>박종범</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,11 @@
 
   
   <entry>
-    <title>AWS SAA 종합</title>
-    <link href="http://localhost:4000/posts/AWS-SAA/" rel="alternate" type="text/html" title="AWS SAA 종합" />
+    <title>AWS SAA 학습 및 준비 기록</title>
+    <link href="http://localhost:4000/posts/AWS-SAA/" rel="alternate" type="text/html" title="AWS SAA 학습 및 준비 기록" />
     <published>2024-08-11T00:00:00+09:00</published>
   
-    <updated>2024-08-11T00:00:00+09:00</updated>
+    <updated>2024-08-11T21:06:06+09:00</updated>
   
     <id>http://localhost:4000/posts/AWS-SAA/</id>
     <content src="http://localhost:4000/posts/AWS-SAA/" />
@@ -50,7 +50,7 @@
     <link href="http://localhost:4000/posts/AWS-SAA-EC2-BASICS/" rel="alternate" type="text/html" title="AWS SAA - 2. EC2 Basics" />
     <published>2024-08-11T00:00:00+09:00</published>
   
-    <updated>2024-08-11T00:00:00+09:00</updated>
+    <updated>2024-08-11T21:06:06+09:00</updated>
   
     <id>http://localhost:4000/posts/AWS-SAA-EC2-BASICS/</id>
     <content src="http://localhost:4000/posts/AWS-SAA-EC2-BASICS/" />
