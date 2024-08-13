@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>D15M4S</title>
   <subtitle>박종범(D15M4S)의 기술블로그 입니다. 학습한 내용을 기록합니다 :D</subtitle>
-  <updated>2024-08-13T15:11:39+09:00</updated>
+  <updated>2024-08-15T20:11:50+09:00</updated>
   <author>
     <name>박종범</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,63 @@
 
   
   <entry>
-    <title>AWS SAA - 3. EC2 Instance Storage</title>
-    <link href="http://localhost:4000/posts/AWS-SAA-EC2-STORAGE/" rel="alternate" type="text/html" title="AWS SAA - 3. EC2 Instance Storage" />
+    <title>SQLD 학습 및 준비 기록</title>
+    <link href="http://localhost:4000/posts/SQLD/" rel="alternate" type="text/html" title="SQLD 학습 및 준비 기록" />
+    <published>2024-08-15T00:00:00+09:00</published>
+  
+    <updated>2024-08-15T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/SQLD/</id>
+    <content src="http://localhost:4000/posts/SQLD/" />
+    <author>
+      <name>D15M4S</name>
+    </author>
+
+  
+    
+    <category term="자격증" />
+    
+    <category term="SQLD" />
+    
+  
+
+  <summary>SQLD를 준비하면서 기록했던 학습 내용과 과정을 블로그에 정리했다.</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>SQLD - 1과목. 데이터 모델링의 이해</title>
+    <link href="http://localhost:4000/posts/SQLD-THEORY/" rel="alternate" type="text/html" title="SQLD - 1과목. 데이터 모델링의 이해" />
+    <published>2024-08-15T00:00:00+09:00</published>
+  
+    <updated>2024-08-15T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/SQLD-THEORY/</id>
+    <content src="http://localhost:4000/posts/SQLD-THEORY/" />
+    <author>
+      <name>D15M4S</name>
+    </author>
+
+  
+    
+    <category term="자격증" />
+    
+    <category term="SQLD" />
+    
+  
+
+  <summary>Part 1. 데이터 모델링의 이해, Part 2. 데이터 모델과 SQL</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>AWS SAA - 4. EC2 Instance Storage</title>
+    <link href="http://localhost:4000/posts/AWS-SAA-EC2-STORAGE/" rel="alternate" type="text/html" title="AWS SAA - 4. EC2 Instance Storage" />
     <published>2024-08-13T00:00:00+09:00</published>
   
-    <updated>2024-08-13T00:00:00+09:00</updated>
+    <updated>2024-08-13T15:18:45+09:00</updated>
   
     <id>http://localhost:4000/posts/AWS-SAA-EC2-STORAGE/</id>
     <content src="http://localhost:4000/posts/AWS-SAA-EC2-STORAGE/" />
@@ -50,7 +102,7 @@
     <link href="http://localhost:4000/posts/AWS-SAA/" rel="alternate" type="text/html" title="AWS SAA 학습 및 준비 기록" />
     <published>2024-08-11T00:00:00+09:00</published>
   
-    <updated>2024-08-11T21:34:54+09:00</updated>
+    <updated>2024-08-13T15:26:23+09:00</updated>
   
     <id>http://localhost:4000/posts/AWS-SAA/</id>
     <content src="http://localhost:4000/posts/AWS-SAA/" />
@@ -93,56 +145,6 @@
   
 
   <summary>인스턴스 구성 - 인스턴스 타입 - 인스턴스 구매 옵션</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>AWS SAA - 3. EC2 Advance</title>
-    <link href="http://localhost:4000/posts/AWS-SAA-EC2-ADVANCE/" rel="alternate" type="text/html" title="AWS SAA - 3. EC2 Advance" />
-    <published>2024-08-11T00:00:00+09:00</published>
-  
-    <updated>2024-08-11T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/AWS-SAA-EC2-ADVANCE/</id>
-    <content src="http://localhost:4000/posts/AWS-SAA-EC2-ADVANCE/" />
-    <author>
-      <name>D15M4S</name>
-    </author>
-
-  
-    
-    <category term="자격증" />
-    
-    <category term="AWS" />
-    
-  
-
-  <summary>탄력적 IP - EC2 배치그룹 - ENI - Hibernate(최대 절전 방식)</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>정보처리기사 실기 정리</title>
-    <link href="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-%EC%A0%95%EB%A6%AC/" rel="alternate" type="text/html" title="정보처리기사 실기 정리" />
-    <published>2024-07-29T00:00:00+09:00</published>
-  
-    <updated>2024-07-29T09:56:15+09:00</updated>
-  
-    <id>http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-%EC%A0%95%EB%A6%AC/</id>
-    <content src="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-%EC%A0%95%EB%A6%AC/" />
-    <author>
-      <name>D15M4S</name>
-    </author>
-
-  
-    
-    <category term="자격증" />
-    
-  
-
-  <summary>2일동안 학습하며 필기했던 내용들, 특히 집중했던 부분을 정리했다.</summary>
 
   </entry>
 

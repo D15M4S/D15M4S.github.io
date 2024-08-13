@@ -1,7 +1,41 @@
 [
   
   {
-    "title": "AWS SAA - 3. EC2 Instance Storage",
+    "title": "SQLD 학습 및 준비 기록",
+    "url": "/posts/SQLD/",
+    "categories": "자격증, SQLD",
+    "tags": "자격증, SQLD, SQL",
+    "date": "2024-08-15 00:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "이력서에 한줄 더 추가하기 위해 이번 2024-08-24 SQLD 시험을 보게 되었다.이미 데이터베이스 설계 및 동적 쿼리 작성을 많이 경험해보아서 데이터베이스 이론을 다시 점검한다는 느낌으로 시험 준비에 임했다.1. 학습 방향 설정1. 이론 학습이론 학습은 홍쌤의 데이터랩을 추천한다.  대학 동기의 추천으로 알게 된 유튜브 채널  이론이 탄탄히 준비...",
+    "content": "이력서에 한줄 더 추가하기 위해 이번 2024-08-24 SQLD 시험을 보게 되었다.이미 데이터베이스 설계 및 동적 쿼리 작성을 많이 경험해보아서 데이터베이스 이론을 다시 점검한다는 느낌으로 시험 준비에 임했다.1. 학습 방향 설정1. 이론 학습이론 학습은 홍쌤의 데이터랩을 추천한다.  대학 동기의 추천으로 알게 된 유튜브 채널  이론이 탄탄히 준비되어 있다. 별도의 이론서가 필요 없는 수준      다만, 빠른 학습을 위하여 알고 있는 내용은 빠르게 건너 띄었다.    추가로 대학 동기의 블로그도 참고하여 학습하였다.2. 실전/기출 학습하루만에 빠르게 이론 학습 및 정리를 마무리 짓고, 기출문제를 풀 계획이다.기출 학습은 SQL 자격 검정 실전문제 (속칭 노랭이) 로 진행하기로 결정하였다.  출제기관에서 출판한 SQLD 실전 기출 문제… 반드시 풀어봐야 한다.  문제를 풀고 몰랐던 이론을 별도로 정리할 필요가 있다.3. 학습 계획 및 진행 상황1과목 데이터 모델링의 이해  데이터 모델링의 이해          데이터 모델의 이해      엔티티      속성      관계      식별자        데이터 모델과 SQL          정규화      관계와 조인의 이해      모델이 표현하는 트랜젝션의 이해      Null 속성의 이해      본질식별자 vs 인조식별자      2과목 SQL 기본 및 활용  SQL 기본          관계형 데이터베이스 개요      SELECT 문      함수      WHERE 절      GROUP BY, HAVING 절      ORDER BY절      조인      표준 조인        SQL 활용          서브 쿼리      집합 연산자      그룹 함수      윈도우 함수      Top N 쿼리      계층형 질의와 셀프 조인      PIVOT 절과 UNPIVOT절      정규표현식        관리 구문          DML      TCL      DDL      DCL      4. 후기"
+  },
+  
+  {
+    "title": "SQLD - 1과목. 데이터 모델링의 이해",
+    "url": "/posts/SQLD-THEORY/",
+    "categories": "자격증, SQLD",
+    "tags": "자격증, SQLD, SQL",
+    "date": "2024-08-15 00:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "1. 학습 내용  Part 1. 데이터 모델링의 이해          데이터 모델의 이해      엔티티      속성      관계      식별자        Part 2. 데이터 모델과 SQL          정규화      관계와 조인의 이해      모델이 표현하는 트랜젝션의 이해      Null 속성의 이해      본질 식별자 vs 인조...",
+    "content": "1. 학습 내용  Part 1. 데이터 모델링의 이해          데이터 모델의 이해      엔티티      속성      관계      식별자        Part 2. 데이터 모델과 SQL          정규화      관계와 조인의 이해      모델이 표현하는 트랜젝션의 이해      Null 속성의 이해      본질 식별자 vs 인조 식별자      2. 정리Part 1. 데이터 모델링의 이해1. 데이터 모델의 이해2. 엔티티3. 속성4. 관계5. 식별자Part 2. 데이터 모델과 SQL1. 정규화2. 관계와 조인의 이해3. 모델이 표현하는 트랜젝션의 이해4. Null 속성의 이해5. 본질 식별자 vs 인조 식별자"
+  },
+  
+  {
+    "title": "AWS SAA - 4. EC2 Instance Storage",
     "url": "/posts/AWS-SAA-EC2-STORAGE/",
     "categories": "자격증, AWS",
     "tags": "자격증, AWS, AWS-SAA, EC2",
@@ -14,7 +48,7 @@
 
     
     "snippet": "1. 학습 내용  Amazon EBS Volume (Elastic Block Store)          EBS Volume Type (Storage Class)      EBS Snapshot      EBS Multi-Attach (다중 연결)      EBS Encryption (암호화)        AMI (Amazon Machine Image...",
-    "content": "1. 학습 내용  Amazon EBS Volume (Elastic Block Store)          EBS Volume Type (Storage Class)      EBS Snapshot      EBS Multi-Attach (다중 연결)      EBS Encryption (암호화)        AMI (Amazon Machine Image)  Amazon EFS (Elastic File System)          EFS Performance mode      EFS ThroughPut mode      EFS Storage Class      EFS LifeCycle Policy(수명 주기 관리)      File System Type      2. 정리1. EBS (Elastic Block Store)  컴퓨터의 SSD, HDD와 같은 역할  물리 드라이브 X, 가상 네트워크 드라이브 O 따라서 지연이 있을 수 있다.  하나의 가용영역(AZ)에 제한된다  gp/2는 크기 비례, gp/3는 사용자 설정 가능  io/1, io/2는 PIOPS, io/2 기준 최대 256,000 iops2. EBS Snapshot &amp; AMI  EBS Snapshot          EBS의 특정 시점을 캡처하는 것      캡처한 Snapshot을 다른 AZ로 옮길 수 있다.        AMI          EC2의 특정 시점을 캡처하는 것      캡처한 AMI를 통해 다른 인스턴스를 생성할 수 있다.      AMI 자체는 리전에 종속. 타 리전에 복사 후 붙여넣기 가능      3. EBS Multi-Attach &amp; EBS Encryption  EBS Multi-Attach          io/1, io/2에 한하여 하나의 EBS가 여러 인스턴스에 연결 가능      최대 16개 인스턴스 연결 지원        EBS Encryption          EBS를 암호화 하는 것      EC2 Hibernate를 위해서는 반드시 필요      기존 EBS Encryption을 진행하기 위해서는 snapshot을 캡처해서 새롭게 암호화 진행해야 함      4. EFS (Elastic File System)  인스턴스와 가중 연결 가능  NFSv4.1 프로토콜 사용 (2049 포트)  보안 그룹을 통해 제어      자동 확장    EFS 성능 모드          일반(General Purpose) - latency 적음      최대 I/O - latency 비교적 높음, 높은 처리율과 다중화        EFS 처리율 모드          버스트 - 스토리지와 처리량 비례      개선된 버전                  프로비저닝 (Provisioning) - 사용자가 사전에 처리량을 지정          탄력적 (Elastic) - 워크로드에 따라 처리량이 조정                      EFS 스토리지 계층          표준 (Standard)      비정기 접근 (EFS-IA)      아카이브 (Archive)        파일 시스템 유형          리전 (Standard) - Multi AZ      One-zone - One AZ, 저가용성 낮은 가격      ###3. 추가 학습한 내용      a. EBS Snapshot과 AMI 비교        b. EBS와 EFS 비교  "
+    "content": "1. 학습 내용  Amazon EBS Volume (Elastic Block Store)          EBS Volume Type (Storage Class)      EBS Snapshot      EBS Multi-Attach (다중 연결)      EBS Encryption (암호화)        AMI (Amazon Machine Image)  Amazon EFS (Elastic File System)          EFS Performance mode      EFS ThroughPut mode      EFS Storage Class      EFS LifeCycle Policy(수명 주기 관리)      File System Type      2. 정리1. EBS (Elastic Block Store)  컴퓨터의 SSD, HDD와 같은 역할  물리 드라이브 X, 가상 네트워크 드라이브 O 따라서 지연이 있을 수 있다.  하나의 가용영역(AZ)에 제한된다  gp/2는 크기 비례, gp/3는 사용자 설정 가능  io/1, io/2는 PIOPS, io/2 기준 최대 256,000 iops2. EBS Snapshot &amp; AMI  EBS Snapshot          EBS의 특정 시점을 캡처하는 것      캡처한 Snapshot을 다른 AZ로 옮길 수 있다.        AMI          EC2의 특정 시점을 캡처하는 것      캡처한 AMI를 통해 다른 인스턴스를 생성할 수 있다.      AMI 자체는 리전에 종속. 타 리전에 복사 후 붙여넣기 가능      3. EBS Multi-Attach &amp; EBS Encryption  EBS Multi-Attach          io/1, io/2에 한하여 하나의 EBS가 여러 인스턴스에 연결 가능      최대 16개 인스턴스 연결 지원        EBS Encryption          EBS를 암호화 하는 것      EC2 Hibernate를 위해서는 반드시 필요      기존 EBS Encryption을 진행하기 위해서는 snapshot을 캡처해서 새롭게 암호화 진행해야 함      4. EFS (Elastic File System)  인스턴스와 가중 연결 가능  NFSv4.1 프로토콜 사용 (2049 포트)  보안 그룹을 통해 제어      자동 확장    EFS 성능 모드          일반(General Purpose) - latency 적음      최대 I/O - latency 비교적 높음, 높은 처리율과 다중화        EFS 처리율 모드          버스트 - 스토리지와 처리량 비례      개선된 버전                  프로비저닝 (Provisioning) - 사용자가 사전에 처리량을 지정          탄력적 (Elastic) - 워크로드에 따라 처리량이 조정                      EFS 스토리지 계층          표준 (Standard)      비정기 접근 (EFS-IA)      아카이브 (Archive)        파일 시스템 유형          리전 (Standard) - Multi AZ      One-zone - One AZ, 저가용성 낮은 가격      3. 추가 학습한 내용      a. EBS Snapshot과 AMI 비교        b. EBS와 EFS 비교  "
   },
   
   {
