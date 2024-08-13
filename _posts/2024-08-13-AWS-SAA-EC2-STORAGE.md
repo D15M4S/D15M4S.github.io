@@ -1,5 +1,5 @@
 ---
-title: AWS SAA - 3. EC2 Instance Storage
+title: AWS SAA - 4. EC2 Instance Storage
 description: EBS- AMI - EFS
 author: D15M4S
 categories: [자격증, AWS]
