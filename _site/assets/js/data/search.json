@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "AWS SAA - 3. EC2 Instance Storage",
+    "url": "/posts/AWS-SAA-EC2-STORAGE/",
+    "categories": "자격증, AWS",
+    "tags": "자격증, AWS, AWS-SAA, EC2",
+    "date": "2024-08-13 00:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "1. 학습 내용  Amazon EBS Volume (Elastic Block Store)          EBS Volume Type (Storage Class)      EBS Snapshot      EBS Multi-Attach (다중 연결)      EBS Encryption (암호화)        AMI (Amazon Machine Image...",
+    "content": "1. 학습 내용  Amazon EBS Volume (Elastic Block Store)          EBS Volume Type (Storage Class)      EBS Snapshot      EBS Multi-Attach (다중 연결)      EBS Encryption (암호화)        AMI (Amazon Machine Image)  Amazon EFS (Elastic File System)          EFS Performance mode      EFS ThroughPut mode      EFS Storage Class      EFS LifeCycle Policy(수명 주기 관리)      File System Type      2. 정리1. EBS (Elastic Block Store)  컴퓨터의 SSD, HDD와 같은 역할  물리 드라이브 X, 가상 네트워크 드라이브 O 따라서 지연이 있을 수 있다.  하나의 가용영역(AZ)에 제한된다  gp/2는 크기 비례, gp/3는 사용자 설정 가능  io/1, io/2는 PIOPS, io/2 기준 최대 256,000 iops2. EBS Snapshot &amp; AMI  EBS Snapshot          EBS의 특정 시점을 캡처하는 것      캡처한 Snapshot을 다른 AZ로 옮길 수 있다.        AMI          EC2의 특정 시점을 캡처하는 것      캡처한 AMI를 통해 다른 인스턴스를 생성할 수 있다.      AMI 자체는 리전에 종속. 타 리전에 복사 후 붙여넣기 가능      3. EBS Multi-Attach &amp; EBS Encryption  EBS Multi-Attach          io/1, io/2에 한하여 하나의 EBS가 여러 인스턴스에 연결 가능      최대 16개 인스턴스 연결 지원        EBS Encryption          EBS를 암호화 하는 것      EC2 Hibernate를 위해서는 반드시 필요      기존 EBS Encryption을 진행하기 위해서는 snapshot을 캡처해서 새롭게 암호화 진행해야 함      4. EFS (Elastic File System)  인스턴스와 가중 연결 가능  NFSv4.1 프로토콜 사용 (2049 포트)  보안 그룹을 통해 제어      자동 확장    EFS 성능 모드          일반(General Purpose) - latency 적음      최대 I/O - latency 비교적 높음, 높은 처리율과 다중화        EFS 처리율 모드          버스트 - 스토리지와 처리량 비례      개선된 버전                  프로비저닝 (Provisioning) - 사용자가 사전에 처리량을 지정          탄력적 (Elastic) - 워크로드에 따라 처리량이 조정                      EFS 스토리지 계층          표준 (Standard)      비정기 접근 (EFS-IA)      아카이브 (Archive)        파일 시스템 유형          리전 (Standard) - Multi AZ      One-zone - One AZ, 저가용성 낮은 가격      ###3. 추가 학습한 내용      a. EBS Snapshot과 AMI 비교        b. EBS와 EFS 비교  "
+  },
+  
+  {
     "title": "AWS SAA 학습 및 준비 기록",
     "url": "/posts/AWS-SAA/",
     "categories": "자격증, AWS",
@@ -14,7 +31,7 @@
 
     
     "snippet": "다양한 방법으로 이력서를 강화할 수 있겠지만, 그중에서도 AWS-SAA 자격증 취득이 나만의 경쟁력을 높이는 데 도움이 될 것이라 판단하게 되었다. 이전 프로젝트에서 AWS를 활용해 인프라를 구축한 경험과, 자격증 학습을 통해 쌓은 탄탄한 이론을 결합하여 한층 더 발전할 수 있을 것이다.1. 인터넷 강의 선정Inflearn 강의와 Udemy 강의 중 ...",
-    "content": "다양한 방법으로 이력서를 강화할 수 있겠지만, 그중에서도 AWS-SAA 자격증 취득이 나만의 경쟁력을 높이는 데 도움이 될 것이라 판단하게 되었다. 이전 프로젝트에서 AWS를 활용해 인프라를 구축한 경험과, 자격증 학습을 통해 쌓은 탄탄한 이론을 결합하여 한층 더 발전할 수 있을 것이다.1. 인터넷 강의 선정Inflearn 강의와 Udemy 강의 중 어떤 강의를 선택할까 고민하다가 결국 스테판 마렉 선생님의 Udemy 강의를 선택하게 되었다.  가격이 싸다 - Udemy는 자주 할인행사를 진행한다. 14,000원 정도에 구매할 수 있다.  PPT 및 코드가 제공된다 - 물론 영문이긴 하지만, chatGPT의 도움을 받아 극복할 수 있다.한글 강의가 편리한 것은 맞지만, Udemy가 압도적으로 싼 가격 + 상당히 괜찮은 강의 퀄리티를 가지고 있기 때문에 추천할 만하다.다만, 강의와 ppt를 봐도 이해가 안되거나 추가 설명이 필요한 부분이 어느정도 존재한다. 이는 chatGPT로 극복할 필요가 있다.2. DUMP(기출문제) 선정이론을 확실히 한 후, 천천히 선택할 계획이다.3. 학습 계획 및 진행 상황  55분 IAM / AWS CLI  1시간 41분 EC2 기초  34분 EC2 심화  1시간 EC2 인스턴스 스토리지  1시간 34분 ELB 및 ASG  1시간 10분 RDS, Aurora, ElastiCache  1시간 22분 Route 53  45분 클래식 솔루션 아키텍처 토론  48분 Amazon S3  31분 Amazon S3 고급  53분 Amazon S3 보안  35분 CloudFront 및 AWS 글로벌 액셀러레이터  49분 AWS 스토리지 추가 기능  1시간 33분 SQS, SNS, Kinesis, Active MQ  53분 AWS 컨테이너 : ECS, Fargate, ECR 및 EKS  16분 서버리스 솔루션 아키텍처  27분 AWS의 데이터베이스  50분 데이터 &amp; 분석  27분 머신러닝  1시간 15분 모니터링 : CloudWatch, CloudTrail, Config  48분 IAM 고급  2시간 38분 VPC  44분 재해 복구 및 마이그레이션  28분 더 많은 솔루션 아키텍처  39분 기타 서비스4. 후기"
+    "content": "다양한 방법으로 이력서를 강화할 수 있겠지만, 그중에서도 AWS-SAA 자격증 취득이 나만의 경쟁력을 높이는 데 도움이 될 것이라 판단하게 되었다. 이전 프로젝트에서 AWS를 활용해 인프라를 구축한 경험과, 자격증 학습을 통해 쌓은 탄탄한 이론을 결합하여 한층 더 발전할 수 있을 것이다.1. 인터넷 강의 선정Inflearn 강의와 Udemy 강의 중 어떤 강의를 선택할까 고민하다가 결국 스테판 마렉 선생님의 Udemy 강의를 선택하게 되었다.  가격이 싸다 - Udemy는 자주 할인행사를 진행한다. 14,000원 정도에 구매할 수 있다.  PPT 및 코드가 제공된다 - 물론 영문이긴 하지만, chatGPT의 도움을 받아 극복할 수 있다.한글 강의가 편리한 것은 맞지만, Udemy가 압도적으로 싼 가격 + 상당히 괜찮은 강의 퀄리티를 가지고 있기 때문에 추천할 만하다.다만, 강의와 ppt를 봐도 이해가 안되거나 추가 설명이 필요한 부분이 어느정도 존재한다. 이는 chatGPT로 극복할 필요가 있다.2. DUMP(기출문제) 선정  examtopics를 사용해서 기출 문제를 분석했다.  한글 번역 시험을 볼 예정이기 때문에 다음 단계를 반복했다.          ChatGPT로 번역해서 풀어보기      영문 버전에서 키워드만 빠르게 확인해보기      실제 AWS에서 사용되는 한글 용어 확인하기 (번역본이랑 어느정도 괴리가 있음)        Discussion을 통해 정답 확인하기 및 피드백 진행3. 학습 계획 및 진행 상황  55분 IAM / AWS CLI  1시간 41분 EC2 기초  34분 EC2 심화  1시간 EC2 인스턴스 스토리지  1시간 34분 ELB 및 ASG  1시간 10분 RDS, Aurora, ElastiCache  1시간 22분 Route 53  45분 클래식 솔루션 아키텍처 토론  48분 Amazon S3  31분 Amazon S3 고급  53분 Amazon S3 보안  35분 CloudFront 및 AWS 글로벌 액셀러레이터  49분 AWS 스토리지 추가 기능  1시간 33분 SQS, SNS, Kinesis, Active MQ  53분 AWS 컨테이너 : ECS, Fargate, ECR 및 EKS  16분 서버리스 솔루션 아키텍처  27분 AWS의 데이터베이스  50분 데이터 &amp; 분석  27분 머신러닝  1시간 15분 모니터링 : CloudWatch, CloudTrail, Config  48분 IAM 고급  2시간 38분 VPC  44분 재해 복구 및 마이그레이션  28분 더 많은 솔루션 아키텍처  39분 기타 서비스4. 후기"
   },
   
   {

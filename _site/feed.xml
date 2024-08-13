@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>D15M4S</title>
   <subtitle>박종범(D15M4S)의 기술블로그 입니다. 학습한 내용을 기록합니다 :D</subtitle>
-  <updated>2024-08-11T21:33:52+09:00</updated>
+  <updated>2024-08-13T15:11:39+09:00</updated>
   <author>
     <name>박종범</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,37 @@
 
   
   <entry>
+    <title>AWS SAA - 3. EC2 Instance Storage</title>
+    <link href="http://localhost:4000/posts/AWS-SAA-EC2-STORAGE/" rel="alternate" type="text/html" title="AWS SAA - 3. EC2 Instance Storage" />
+    <published>2024-08-13T00:00:00+09:00</published>
+  
+    <updated>2024-08-13T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/AWS-SAA-EC2-STORAGE/</id>
+    <content src="http://localhost:4000/posts/AWS-SAA-EC2-STORAGE/" />
+    <author>
+      <name>D15M4S</name>
+    </author>
+
+  
+    
+    <category term="자격증" />
+    
+    <category term="AWS" />
+    
+  
+
+  <summary>EBS- AMI - EFS</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>AWS SAA 학습 및 준비 기록</title>
     <link href="http://localhost:4000/posts/AWS-SAA/" rel="alternate" type="text/html" title="AWS SAA 학습 및 준비 기록" />
     <published>2024-08-11T00:00:00+09:00</published>
   
-    <updated>2024-08-11T21:06:06+09:00</updated>
+    <updated>2024-08-11T21:34:54+09:00</updated>
   
     <id>http://localhost:4000/posts/AWS-SAA/</id>
     <content src="http://localhost:4000/posts/AWS-SAA/" />
@@ -117,30 +143,6 @@
   
 
   <summary>2일동안 학습하며 필기했던 내용들, 특히 집중했던 부분을 정리했다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>정보처리기사 실기 - 09. 소프트웨어 개발 보안 구축</title>
-    <link href="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-9-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EA%B0%9C%EB%B0%9C-%EB%B3%B4%EC%95%88-%EA%B5%AC%EC%B6%95/" rel="alternate" type="text/html" title="정보처리기사 실기 - 09. 소프트웨어 개발 보안 구축" />
-    <published>2024-07-29T00:00:00+09:00</published>
-  
-    <updated>2024-07-29T09:56:15+09:00</updated>
-  
-    <id>http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-9-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EA%B0%9C%EB%B0%9C-%EB%B3%B4%EC%95%88-%EA%B5%AC%EC%B6%95/</id>
-    <content src="http://localhost:4000/posts/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-9-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EA%B0%9C%EB%B0%9C-%EB%B3%B4%EC%95%88-%EA%B5%AC%EC%B6%95/" />
-    <author>
-      <name>D15M4S</name>
-    </author>
-
-  
-    
-    <category term="자격증" />
-    
-  
-
-  <summary>중요도 ★★★★☆ - 보안은 원래 많이 어려웠다...</summary>
 
   </entry>
 
