@@ -47,7 +47,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="twitter:creator" content="@박종범(D15M4S)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"박종범(D15M4S)","url":"https://github.com/D15M4S"},"dateModified":"2024-08-15T00:00:00+09:00","datePublished":"2024-08-15T00:00:00+09:00","description":"Part 1. 데이터 모델링의 이해, Part 2. 데이터 모델과 SQL","headline":"SQLD - 1과목. 데이터 모델링의 이해","image":"http://localhost:4000/assets/img/contents/sqld/sqld-profile.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/SQLD-THEORY/"},"url":"http://localhost:4000/posts/SQLD-THEORY/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"박종범(D15M4S)","url":"https://github.com/D15M4S"},"dateModified":"2024-08-16T23:09:44+09:00","datePublished":"2024-08-15T00:00:00+09:00","description":"Part 1. 데이터 모델링의 이해, Part 2. 데이터 모델과 SQL","headline":"SQLD - 1과목. 데이터 모델링의 이해","image":"http://localhost:4000/assets/img/contents/sqld/sqld-profile.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/SQLD-THEORY/"},"url":"http://localhost:4000/posts/SQLD-THEORY/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1488,6 +1488,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1723817384"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Aug 16, 2024
+</time>
+
+        </span>
+      
 
       
         
@@ -1542,9 +1565,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1793 words"
+  title="1896 words"
 >
-  <em>9 min</em> read</span>
+  <em>10 min</em> read</span>
 
         </div>
       </div>
@@ -1744,6 +1767,24 @@
 
 <h4 id="3-모델이-표현하는-트랜젝션의-이해"><span class="me-2">3. 모델이 표현하는 트랜젝션의 이해</span><a href="#3-모델이-표현하는-트랜젝션의-이해" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <h4 id="4-null-속성의-이해"><span class="me-2">4. Null 속성의 이해</span><a href="#4-null-속성의-이해" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>NULL의 연산
+    <ul>
+      <li>NULL값과의 연산은 NULL값을 리턴</li>
+      <li>NULL값과의 비교연산은 거짓(FALSE)를 리턴</li>
+      <li>NULL은 상태이기 때문에 크고 작음을 비교할 수 없음</li>
+    </ul>
+  </li>
+  <li>NULL의 입력
+    <ul>
+      <li>오라클에서 ‘‘과 같이 입력했을 경우 null로 입력된다.</li>
+      <li>SQL Server에서 ‘‘과 같이 입력했을 경우 공백문자로 입력된다.</li>
+    </ul>
+  </li>
+  <li>NULL의</li>
+</ul>
+
 <h4 id="5-본질-식별자-vs-인조-식별자"><span class="me-2">5. 본질 식별자 vs 인조 식별자</span><a href="#5-본질-식별자-vs-인조-식별자" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <p><a href="/assets/img/contents/sqld/sqld-theory-10.jpg" class="popup img-link  shimmer"><img src="/assets/img/contents/sqld/sqld-theory-10.jpg" alt="10" loading="lazy"></a></p>
 
@@ -1890,6 +1931,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/SQLD-SQL-BASIC-ADVANCE/">SQLD - 2과목. SQL 기본 및 활용 - SQL 기본편</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/SQLD-THEORY/">SQLD - 1과목. 데이터 모델링의 이해</a>
         </li>
       
@@ -1912,13 +1960,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/AWS-SAA-EC2-STORAGE/">AWS SAA - 4. EC2 Instance Storage</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/AWS-SAA-EC2-BASICS/">AWS SAA - 2. EC2 Basics</a>
         </li>
       
     </ul>
@@ -2421,6 +2462,18 @@
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2434,6 +2487,34 @@
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/SQLD-SQL-BASIC-ADVANCE/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1723820400"
+  data-df="ll"
+  
+>
+  Aug 17, 2024
+</time>
+
+              <h4 class="pt-0 my-2">SQLD - 2과목. SQL 기본 및 활용 - SQL 기본편</h4>
+              <div class="text-muted">
+                <p>SQL 기본 - SELECT, FROM, WHERE, GROUP BY, ORDER BY, JOIN</p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/posts/SQLD/" class="post-preview card h-100">
@@ -2486,34 +2567,6 @@
               <h4 class="pt-0 my-2">AWS SAA - 4. EC2 Instance Storage</h4>
               <div class="text-muted">
                 <p>EBS- AMI - EFS</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/AWS-SAA/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1723302000"
-  data-df="ll"
-  
->
-  Aug 11, 2024
-</time>
-
-              <h4 class="pt-0 my-2">AWS SAA 학습 및 준비 기록</h4>
-              <div class="text-muted">
-                <p>AWS-SAA(C03)을 준비하면서 기록했던 학습 내용과 과정을 블로그에 정리했다.</p>
               </div>
             </div>
           </a>

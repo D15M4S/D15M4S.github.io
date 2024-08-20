@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>D15M4S</title>
   <subtitle>박종범(D15M4S)의 기술블로그 입니다. 학습한 내용을 기록합니다 :D</subtitle>
-  <updated>2024-08-16T23:06:19+09:00</updated>
+  <updated>2024-08-20T21:24:58+09:00</updated>
   <author>
     <name>박종범</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,32 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>SQLD - 2과목. SQL 기본 및 활용 - SQL 기본편</title>
+    <link href="http://localhost:4000/posts/SQLD-SQL-BASIC-ADVANCE/" rel="alternate" type="text/html" title="SQLD - 2과목. SQL 기본 및 활용 - SQL 기본편" />
+    <published>2024-08-17T00:00:00+09:00</published>
+  
+    <updated>2024-08-17T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/SQLD-SQL-BASIC-ADVANCE/</id>
+    <content src="http://localhost:4000/posts/SQLD-SQL-BASIC-ADVANCE/" />
+    <author>
+      <name>D15M4S</name>
+    </author>
+
+  
+    
+    <category term="자격증" />
+    
+    <category term="SQLD" />
+    
+  
+
+  <summary>SQL 기본 - SELECT, FROM, WHERE, GROUP BY, ORDER BY, JOIN</summary>
+
+  </entry>
 
   
   <entry>
@@ -50,7 +76,7 @@
     <link href="http://localhost:4000/posts/SQLD-THEORY/" rel="alternate" type="text/html" title="SQLD - 1과목. 데이터 모델링의 이해" />
     <published>2024-08-15T00:00:00+09:00</published>
   
-    <updated>2024-08-15T00:00:00+09:00</updated>
+    <updated>2024-08-16T23:09:44+09:00</updated>
   
     <id>http://localhost:4000/posts/SQLD-THEORY/</id>
     <content src="http://localhost:4000/posts/SQLD-THEORY/" />
@@ -119,32 +145,6 @@
   
 
   <summary>AWS-SAA(C03)을 준비하면서 기록했던 학습 내용과 과정을 블로그에 정리했다.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>AWS SAA - 2. EC2 Basics</title>
-    <link href="http://localhost:4000/posts/AWS-SAA-EC2-BASICS/" rel="alternate" type="text/html" title="AWS SAA - 2. EC2 Basics" />
-    <published>2024-08-11T00:00:00+09:00</published>
-  
-    <updated>2024-08-11T21:06:06+09:00</updated>
-  
-    <id>http://localhost:4000/posts/AWS-SAA-EC2-BASICS/</id>
-    <content src="http://localhost:4000/posts/AWS-SAA-EC2-BASICS/" />
-    <author>
-      <name>D15M4S</name>
-    </author>
-
-  
-    
-    <category term="자격증" />
-    
-    <category term="AWS" />
-    
-  
-
-  <summary>인스턴스 구성 - 인스턴스 타입 - 인스턴스 구매 옵션</summary>
 
   </entry>
 
