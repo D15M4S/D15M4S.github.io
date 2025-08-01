@@ -60,7 +60,7 @@ importers:
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@3.4.17)
       astro:
-        specifier: 5.10.2
+        specifier: ^5.10.2
         version: 5.10.2(@types/node@24.0.10)(jiti@1.21.7)(lightningcss@1.29.3)(rollup@2.79.2)(sass@1.80.4)(stylus@0.64.0)(terser@5.39.0)(typescript@5.8.3)(yaml@2.7.0)
       astro-expressive-code:
         specifier: ^0.41.2
@@ -122,6 +122,9 @@ importers:
       sanitize-html:
         specifier: ^2.17.0
         version: 2.17.0
+      save-dev:
+        specifier: ^0.0.1-security
+        version: 0.0.1-security
       sharp:
         specifier: ^0.34.2
         version: 0.34.2
@@ -4449,6 +4452,9 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
+  save-dev@0.0.1-security:
+    resolution: {integrity: sha512-k6knZTDNK8PKKbIqnvxiOveJinuw2LcQjqDoaorZWP9M5AR2EPsnpDeSbeoZZ0pHr5ze1uoaKdK8NBGQrJ34Uw==}
+
   sax@1.4.1:
     resolution: {integrity: sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg==}
 
@@ -6550,7 +6556,7 @@ snapshots:
   '@jridgewell/gen-mapping@0.3.8':
     dependencies:
       '@jridgewell/set-array': 1.2.1
-      '@jridgewell/sourcemap-codec': 1.5.0
+      '@jridgewell/sourcemap-codec': 1.5.4
       '@jridgewell/trace-mapping': 0.3.25
 
   '@jridgewell/resolve-uri@3.1.2': {}
@@ -6569,7 +6575,7 @@ snapshots:
   '@jridgewell/trace-mapping@0.3.25':
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
-      '@jridgewell/sourcemap-codec': 1.5.0
+      '@jridgewell/sourcemap-codec': 1.5.4
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -10358,6 +10364,8 @@ snapshots:
       immutable: 4.3.7
       source-map-js: 1.2.1
     optional: true
+
+  save-dev@0.0.1-security: {}
 
   sax@1.4.1: {}
 
