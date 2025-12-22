@@ -8,8 +8,8 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "코딩은 망해도 블로그는 남는다",
-	subtitle: "AI/CS Tech Blog",
+	title: "DISMAS Tech Garage",
+	subtitle: "ML/CS 관련 내용 정리하는 블로그",
 	lang: "ko", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
 		hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
