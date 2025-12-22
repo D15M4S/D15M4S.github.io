@@ -66,7 +66,7 @@ export const profileConfig: ProfileConfig = {
 		{
 		 	name: "LinkedIn",
 		 	icon: "fa6-brands:linkedin",
-		 	url: "www.linkedin.com/in/종범-박-9a0056321",
+		 	url: "https://www.linkedin.com/in/종범-박-9a0056321",
 		},
 		{
 			name: "GitHub",

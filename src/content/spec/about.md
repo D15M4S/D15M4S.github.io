@@ -1,6 +1,6 @@
 # 자기소개
 
-<img src="/src/assets/posts/spec/about.jpg" alt="소개 이미지" style="width: 30%; border-radius: 8px;" />
+<img src="/assets/posts/spec/about.jpg" alt="소개 이미지" style="width: 30%; border-radius: 8px;" />
 
 ## 안녕하세요! AI Engineer 박종범입니다 🥰
 저는 다음과 같은 영역에 대해 많은 관심을 가지고 있어요!
