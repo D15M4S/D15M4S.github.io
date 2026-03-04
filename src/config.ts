@@ -8,7 +8,7 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "DISMAS Tech Garage",
+	title: "Old School Lab",
 	subtitle: "ML/CS 관련 내용 정리하는 블로그",
 	lang: "ko", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
