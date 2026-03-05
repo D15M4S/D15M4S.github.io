@@ -9,7 +9,7 @@ import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
 	title: "Old School Lab",
-	subtitle: "ML/CS 관련 내용 정리하는 블로그",
+	subtitle: "재빠른 세상에서 천천히 공부하는 공간",
 	lang: "ko", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
 		hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
@@ -30,11 +30,10 @@ export const siteConfig: SiteConfig = {
 		depth: 2, // Maximum heading depth to show in the table, from 1 to 3
 	},
 	favicon: [
-		// Leave this array empty to use the default favicon
 		{
-		   src: 'assets/favicon/favicon-32x32.png',    // Path of the favicon, relative to the /public directory
-		   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
-		}
+		   src: 'assets/favicon/favicon.svg',
+		   theme: 'light',
+		},
 	],
 };
 
