@@ -10,7 +10,7 @@ on:
 
 # Allow only one concurrent deployment, cancelling in-progress runs
 concurrency:
-  group: pages
+  group: deploy-${{ github.ref }}
   cancel-in-progress: true
 
 # Allow this job to clone the repo and create a page deployment
