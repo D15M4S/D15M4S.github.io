@@ -64,6 +64,11 @@ export const profileConfig: ProfileConfig = {
 		// 	url: "https://twitter.com",
 		// },
 		{
+			name: "Email",
+			icon: "fa6-solid:envelope",
+			url: "mailto:dismas5184@gmail.com",
+		},
+		{
 		 	name: "LinkedIn",
 		 	icon: "fa6-brands:linkedin",
 		 	url: "https://www.linkedin.com/in/종범-박-9a0056321",
