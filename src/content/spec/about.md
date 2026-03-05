@@ -1,4 +1,8 @@
-# Introduce.
+---
+title: "About"
+---
+
+<h1 style="margin-bottom: 1rem;">Introduce.</h1>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; margin-bottom: 2rem;">
   <div>
@@ -15,18 +19,3 @@
     <p style="margin: 0;">💼 <a href="https://www.linkedin.com/in/종범-박-9a0056321" target="_blank">LinkedIn</a></p>
   </div>
 </div>
-
----
-
-## Study Project
-지속적인 성장을 위해 진행하는 학습 및 사이드 프로젝트입니다.<br/>
-학습 과정과 인사이트는 이 블로그에 기록합니다.
-
-
-<h3 style="margin-bottom: 0.3rem;">🚀 In Progress</h3>
-<p style="margin: 0 0 0.3rem 0;">현재 집중하고 있는 기술 스택</p>
-<div style="display: flex; flex-wrap: wrap; gap: 4px; margin: 0;"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" /><img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL" /></div>
-
-<h3 style="margin-bottom: 0.3rem;">📋 Upcoming</h3>
-<p style="margin: 0 0 0.3rem 0;">다음 학습 로드맵</p>
-<div style="display: flex; flex-wrap: wrap; gap: 4px; margin: 0;"><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch" /><img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow" /><img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" /><img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" /><img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="scikit-learn" /></div>
