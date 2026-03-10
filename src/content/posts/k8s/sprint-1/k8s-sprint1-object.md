@@ -1,9 +1,9 @@
 ---
-title: "쿠버네티스 Sprint 1 - 오브젝트 정리"
+title: "쿠버네티스 Warm-up - Namespace, Pod, Label, Selector"
 published: 2026-03-08
-description: ""
+description: "인프런 '쿠버네티스 어나더 클래스 - Sprint 1, 지상편'을 본격적으로 학습하기 전에, Namespace, Pod, Label, Selector처럼 먼저 감을 잡아 두면 좋겠다고 느낀 Kubernetes 기초 용어들을 제 기준으로 정리한 글입니다."
 image: "/assets/posts/k8s/k8s-sprint1-object-1_main.jpg"
-tags: ["Kubernetes", "Namespace", "Object"]
+tags: ["Kubernetes", "Namespace", "Pod", "Label"]
 category: "Kubernetes"
 draft: false
 lang: "ko"
@@ -11,17 +11,11 @@ lang: "ko"
 
 회사에서 LLMOps를 구축할 기회가 생겼습니다.
 
-목표는 H200 같은 GPU 자원을 여러 사용자에게 안정적으로, 그리고 효율적으로 할당할 수 있는 플랫폼을 Kubernetes 위에 만드는 것입니다.
+목표는 H200 같은 GPU 자원을 여러 사용자에게 안정적이고 효율적으로 할당할 수 있는 플랫폼을 Kubernetes 위에 만드는 것입니다.
 
-문제는 Kubernetes 경험이 거의 없고, 인프라 기본기도 충분하지 않다는 점이었습니다. 주어진 시간도 넉넉하지 않기 때문에, 감에 의존해 구현만 밀어붙이는 방식으로는 분명 한계가 있다고 판단했습니다.
+문제는 Kubernetes 경험이 거의 없고, 인프라 기본기도 충분하지 않다는 점이었습니다. 주어진 시간도 넉넉하지 않았기 때문에, 아는 만큼만 감으로 밀어붙여서는 금방 한계에 부딪히겠다는 생각이 들었습니다.
 
-그래서 이번에는 결과만 급하게 만드는 대신, 강의를 따라가며 핵심 개념을 하나씩 이해하고 제 언어로 다시 정리해 보기로 했습니다.
-
-기준으로 삼은 강의는 인프런의 [쿠버네티스 어나더 클래스 - Sprint 1, 지상편](https://www.inflearn.com/course/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%96%B4%EB%82%98%EB%8D%94-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%A7%80%EC%83%81%ED%8E%B8-sprint1/dashboard?cid=330869)입니다. 현재는 `Object 그려보며 이해하기` 파트를 학습하고 있으며, 이후에는 `Application 기능으로 이해하기`, `Component 동작으로 이해하기`로 이어서 공부할 예정입니다.
-
-학습 방식은 먼저 강의 자료를 보며 스스로 개념을 정리하고, 그 다음 강의를 들으면서 빠진 내용이나 실무적으로 중요한 포인트를 덧붙이는 식으로 진행하고 있습니다.
-
-
+이번에 참고한 강의는 인프런의 [쿠버네티스 어나더 클래스 - Sprint 1, 지상편](https://www.inflearn.com/course/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%96%B4%EB%82%98%EB%8D%94-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%A7%80%EC%83%81%ED%8E%B8-sprint1/dashboard?cid=330869)입니다. 다만 `Object 그려보며 이해하기` 파트로 바로 들어가기에는 `Namespace`, `Pod`, `Label`, `Selector` 같은 단어가 아직 제 안에서 충분히 정리되어 있지 않다고 느꼈습니다. 그래서 이번 글에서는 그 개념들을 먼저 짧게 정리해 보는 warm-up을 해 보려고 합니다.
 
 ## 01. Namespace란 무엇일까요?
 
@@ -101,34 +95,63 @@ sidecar 패턴은 메인 애플리케이션 container 옆에 보조 역할의 co
 
 ### 같은 Pod 안의 container들은 무엇을 공유할까요?
 
-같은 Pod 안의 container들은 몇 가지 중요한 자원을 함께 사용합니다.
+같은 Pod 안의 container들은 단순히 한곳에 모여 있는 것이 아닙니다. Kubernetes는 이 container들을 하나의 실행 단위로 보고, 꼭 함께 써야 하는 자원을 Pod 수준에서 묶어 둡니다. 핵심은 **네트워크와 저장소를 Pod 단위로 공유한다**는 점입니다.
 
-- 같은 네트워크 IP
-- 같은 port 공간
-- 같은 volume
+먼저 네트워크부터 보겠습니다. 같은 Pod 안의 container들은 각자 IP를 하나씩 받지 않습니다. 대신 Pod 전체가 IP 하나를 가지고, 그 안의 container들이 같은 네트워크 공간을 함께 씁니다. 그래서 한 container가 `127.0.0.1:8080`에서 요청을 받고 있으면, 같은 Pod 안의 다른 container도 `localhost:8080`으로 바로 접근할 수 있습니다.
 
-그래서 같은 Pod 안의 container끼리는 `localhost`로 통신할 수 있습니다. 이 점이 Docker에서 서로 분리된 container를 개별적으로 실행하던 감각과 가장 크게 다른 부분 중 하나입니다.
+이 부분은 Docker를 써 본 사람에게는 조금 헷갈릴 수 있습니다. Docker에서도 여러 container를 같은 network에 연결할 수 있기 때문입니다. 하지만 그 경우에는 보통 container마다 자기 IP가 따로 있고, `localhost`도 자기 자신만 가리킵니다. 즉 Docker에서 "같은 network를 쓴다"는 것은 서로 통신할 수 있다는 뜻에 가깝고, Kubernetes에서 "같은 Pod에 있다"는 것은 아예 같은 네트워크 공간을 함께 쓴다는 뜻에 더 가깝습니다. 그래서 같은 Pod 안의 두 container는 같은 port를 동시에 사용할 수 없습니다.
 
-### 왜 Pod를 직접 만들기보다 Deployment를 많이 쓸까요?
+저장소도 비슷하게 이해하면 됩니다. 같은 Pod에 있다고 해서 파일 시스템 전체가 하나로 합쳐지는 것은 아닙니다. 다만 Pod에 volume을 정의하고 여러 container에 mount하면, 같은 파일을 함께 읽고 쓸 수 있습니다. sidecar container가 메인 container의 로그를 읽거나, 여러 container가 같은 설정 파일을 참조하는 구성이 자연스러운 이유가 여기에 있습니다.
 
-Pod 자체는 비교적 쉽게 교체될 수 있는 단위입니다. 노드 장애가 생기거나, 스케줄링이 다시 일어나거나, 업데이트가 발생하면 기존 Pod는 사라지고 새로운 Pod가 만들어질 수 있습니다. 즉, Pod는 영구히 고정된 존재라기보다 필요에 따라 대체될 수 있는 실행 단위에 가깝습니다.
-
-그래서 실제 운영에서는 Pod를 직접 하나씩 관리하기보다, 다음에 보게 될 `Deployment` 같은 상위 리소스를 통해 원하는 개수와 상태를 유지하는 방식이 더 일반적입니다.
+물론 모든 것이 공유되는 것은 아닙니다. container image, 루트 파일 시스템, 환경 변수는 기본적으로 container마다 따로 가집니다. 그래서 Pod는 여러 container를 무조건 하나로 합치는 개념이라기보다, **함께 움직여야 하는 container들이 공통의 네트워크와 저장소를 나눠 쓰도록 묶어 주는 실행 단위**라고 이해하는 편이 더 자연스럽습니다.
 
 ## Labels & Selector
 
-## Deployment
+> `Label`은 Kubernetes 리소스에 붙이는 key-value 형태의 분류 정보이고, `Selector`는 그 label을 기준으로 원하는 리소스를 고르는 조건입니다.
 
-## Service
+### Label은 리소스에 붙이는 표식입니다.
 
-## ConfigMap
+Kubernetes에서는 리소스가 많아질수록 이름만으로 대상을 관리하기가 불편해집니다. 이름은 보통 하나의 리소스를 식별하는 데 쓰이지만, 실제 운영에서는 "이 Pod는 어떤 애플리케이션에 속하는가", "운영 환경인가 개발 환경인가", "frontend인가 backend인가" 같은 분류 정보가 더 자주 필요합니다. 이럴 때 붙이는 것이 `label`입니다.
 
-## Secret
+예를 들어 Pod 하나에 아래와 같은 label을 붙일 수 있습니다.
 
-## Volume
+```yaml
+metadata:
+  labels:
+    app: api
+    env: prod
+    tier: backend
+```
 
-## PV
+이렇게 해 두면 이 Pod는 `api` 애플리케이션에 속하고, `prod` 환경에서 돌고 있으며, 역할은 `backend`라고 표현할 수 있습니다. 중요한 점은 label이 하나만 붙는 것이 아니라, **하나의 리소스에 여러 label을 조합해서 붙일 수 있다**는 점입니다. 그래서 label은 단순한 이름표라기보다, 리소스를 여러 관점에서 설명하는 메타데이터에 가깝습니다.
 
-## PVC
+### Selector는 label을 기준으로 대상을 고르는 조건입니다.
 
-## HPA
+label이 리소스에 붙이는 정보라면, `selector`는 그 정보를 바탕으로 원하는 대상을 골라내는 조건입니다. 쉽게 말해 label이 "붙이는 것"이라면, selector는 "찾는 것"에 가깝습니다. 중요한 점은 selector가 Pod에 무언가를 새로 붙이는 것이 아니라, **이미 붙어 있는 label을 기준으로 조건에 맞는 Pod를 골라낸다**는 데 있습니다.
+
+예를 들어 Pod가 세 개 있다고 가정해 보겠습니다. 하나는 `app=api, env=prod`, 다른 하나는 `app=api, env=dev`, 마지막 하나는 `app=web, env=prod` label을 가지고 있다고 해 보겠습니다. 이때 `app=api`라는 selector를 사용하면, 세 Pod 중에서 앞의 두 Pod를 골라낼 수 있습니다.
+
+```yaml
+selector:
+  app: api
+```
+
+위 selector는 `app: api` label을 가진 Pod를 찾는 조건입니다. 여기에 `env=prod` 조건까지 함께 붙이면, 이번에는 첫 번째 Pod 하나만 남습니다. 즉, 조건이 여러 개일 때는 보통 **모든 조건을 동시에 만족하는 리소스만 남게 됩니다.**
+
+왜 굳이 이런 방식이 필요할까요? Pod 이름은 하나의 대상을 정확히 구분할 때는 유용하지만, 같은 성격을 가진 Pod들을 한 번에 묶어 보기에는 불편합니다. 반면 label을 붙여 두면 `api` 역할을 하는 Pod, `prod` 환경의 Pod처럼 조건으로 대상을 찾을 수 있습니다. 그래서 label은 "이 Pod가 어떤 성격을 가졌는가"를 설명하고, selector는 "그중에서 어떤 Pod를 찾을 것인가"를 정하는 기준이라고 이해하면 됩니다.
+
+정리하면, label은 분류를 위한 정보이고 selector는 그 분류 정보를 이용해 대상을 찾는 조건입니다. label만 붙어 있다고 해서 자동으로 무언가가 일어나는 것은 아니고, selector만 있어도 맞는 label이 없으면 찾을 수 있는 대상이 없습니다. Kubernetes는 이런 방식으로 여러 Pod 중에서 필요한 대상을 골라냅니다.
+
+## 갈무리하며
+
+이 글은 강의를 본격적으로 보기 전에, 자꾸 걸리던 단어들을 제 기준으로 먼저 정리해 본 기록입니다. `Namespace`, `Pod`, `Label`, `Selector`를 미리 분리해서 적어 보니, 뒤에서 나올 내용도 조금 덜 추상적으로 받아들일 수 있을 것 같았습니다.
+
+지금 제 기준에서는 namespace는 소속을 나누는 작업 공간이고, pod는 실제로 container가 실행되는 단위이며, label은 리소스의 성격을 설명하는 정보이고, selector는 그 조건에 맞는 대상을 찾는 기준입니다. 최소한 이 정도 감을 먼저 잡아 두면, 이후 Sprint 1에서 다루는 object들도 훨씬 덜 낯설게 느껴질 것 같습니다.
+
+다음 글부터는 본격적으로 `Object 그려보며 이해하기` 흐름을 따라가며 `Deployment`와 `Service`를 이어서 정리해 보려고 합니다.
+
+### 관련 공식 문서
+
+- [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
+- [Pods](https://kubernetes.io/docs/concepts/workloads/pods/)
+- [Labels and Selectors](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
