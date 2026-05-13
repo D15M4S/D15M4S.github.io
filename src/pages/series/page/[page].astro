@@ -1,0 +1,48 @@
+---
+import type { GetStaticPaths } from "astro";
+import SeriesSection from "@components/SeriesSection.astro";
+import SeriesPagination from "@components/control/SeriesPagination.astro";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { SERIES_PAGE_SIZE } from "../../../constants/series";
+import { getSeriesList, type SeriesOverview } from "../../../utils/content-utils";
+
+type Props = {
+	pageNumber: number;
+	lastPage: number;
+	seriesList: SeriesOverview[];
+	totalSeries: number;
+};
+
+export const getStaticPaths = (async () => {
+	const allSeries = await getSeriesList();
+	const lastPage = Math.max(1, Math.ceil(allSeries.length / SERIES_PAGE_SIZE));
+
+	if (lastPage <= 1) return [];
+
+	return Array.from({ length: lastPage - 1 }, (_, index) => {
+		const pageNumber = index + 2;
+		const start = (pageNumber - 1) * SERIES_PAGE_SIZE;
+		return {
+			params: { page: String(pageNumber) },
+			props: {
+				pageNumber,
+				lastPage,
+				seriesList: allSeries.slice(start, start + SERIES_PAGE_SIZE),
+				totalSeries: allSeries.length,
+			},
+		};
+	});
+}) satisfies GetStaticPaths;
+
+const { pageNumber, lastPage, seriesList, totalSeries } = Astro.props as Props;
+---
+
+<MainGridLayout title={`시리즈 ${pageNumber}페이지`} description="주제별로 이어지는 학습 흐름을 모아봅니다.">
+	<SeriesSection
+		title="전체 시리즈"
+		description={`전체 ${totalSeries}개 시리즈 중 ${pageNumber}페이지입니다.`}
+		seriesList={seriesList}
+		showAllLink={false}
+	/>
+	<SeriesPagination currentPage={pageNumber} lastPage={lastPage} class="mx-auto onload-animation" />
+</MainGridLayout>

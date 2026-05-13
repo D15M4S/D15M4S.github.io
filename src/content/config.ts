@@ -12,6 +12,11 @@ const postsCollection = defineCollection({
 		category: z.string().optional().nullable().default(""),
 		lang: z.string().optional().default(""),
 		cropCover: z.boolean().optional().default(false),
+		coverLayout: z.enum(["side", "wide"]).optional().default("side"),
+		series: z.string().optional().default(""),
+		seriesTitle: z.string().optional().default(""),
+		seriesDescription: z.string().optional().default(""),
+		seriesOrder: z.number().optional(),
 
 		/* For internal use */
 		prevTitle: z.string().default(""),

@@ -1,12 +1,17 @@
 import { type CollectionEntry, getCollection } from "astro:content";
+import {
+	type SeriesDefinition,
+	type SeriesStatus,
+	seriesDefinitions,
+} from "@constants/series";
 import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
-import { getCategoryUrl } from "@utils/url-utils.ts";
+import { getCategoryUrl, getSeriesUrl } from "@utils/url-utils.ts";
 
 // // Retrieve posts and sort them by publication date
 async function getRawSortedPosts() {
 	const allBlogPosts = await getCollection("posts", ({ data }) => {
-		return import.meta.env.PROD ? data.draft !== true : true;
+		return data.draft !== true;
 	});
 
 	const sorted = allBlogPosts.sort((a, b) => {
@@ -53,7 +58,7 @@ export type Tag = {
 
 export async function getTagList(): Promise<Tag[]> {
 	const allBlogPosts = await getCollection<"posts">("posts", ({ data }) => {
-		return import.meta.env.PROD ? data.draft !== true : true;
+		return data.draft !== true;
 	});
 
 	const countMap: { [key: string]: number } = {};
@@ -80,7 +85,7 @@ export type Category = {
 
 export async function getCategoryList(): Promise<Category[]> {
 	const allBlogPosts = await getCollection<"posts">("posts", ({ data }) => {
-		return import.meta.env.PROD ? data.draft !== true : true;
+		return data.draft !== true;
 	});
 	const count: { [key: string]: number } = {};
 	allBlogPosts.map((post: { data: { category: string | null } }) => {
@@ -111,4 +116,110 @@ export async function getCategoryList(): Promise<Category[]> {
 		});
 	}
 	return ret;
+}
+
+export type SeriesOverview = SeriesDefinition & {
+	postCount: number;
+	totalPosts: number;
+	posts: PostForList[];
+	latestPost?: PostForList;
+	url: string;
+};
+
+function sortPostsBySeriesOrder(posts: PostForList[]): PostForList[] {
+	return [...posts].sort((a, b) => {
+		const orderA = a.data.seriesOrder ?? Number.MAX_SAFE_INTEGER;
+		const orderB = b.data.seriesOrder ?? Number.MAX_SAFE_INTEGER;
+		if (orderA !== orderB) return orderA - orderB;
+		return a.data.published.getTime() - b.data.published.getTime();
+	});
+}
+
+function getLatestPost(posts: PostForList[]): PostForList | undefined {
+	return [...posts].sort(
+		(a, b) => b.data.published.getTime() - a.data.published.getTime(),
+	)[0];
+}
+
+function inferStatus(
+	definition: SeriesDefinition | undefined,
+	postCount: number,
+	totalPosts: number,
+): SeriesStatus {
+	if (definition?.status) return definition.status;
+	if (postCount === 0) return "planned";
+	if (totalPosts > 0 && postCount >= totalPosts) return "completed";
+	return "in-progress";
+}
+
+export async function getSeriesList(): Promise<SeriesOverview[]> {
+	const posts = await getSortedPostsList();
+	const groupedPosts = new Map<string, PostForList[]>();
+
+	for (const post of posts) {
+		const series = post.data.series?.trim();
+		if (!series) continue;
+		groupedPosts.set(series, [...(groupedPosts.get(series) ?? []), post]);
+	}
+
+	const definedSeries = seriesDefinitions.map((definition) => {
+		const seriesPosts = sortPostsBySeriesOrder(
+			groupedPosts.get(definition.slug) ?? [],
+		);
+		const totalPosts =
+			definition.totalPosts ?? definition.chapters?.length ?? seriesPosts.length;
+		return {
+			...definition,
+			status: inferStatus(definition, seriesPosts.length, totalPosts),
+			totalPosts,
+			postCount: seriesPosts.length,
+			posts: seriesPosts,
+			latestPost: getLatestPost(seriesPosts),
+			url: getSeriesUrl(definition.slug),
+		};
+	});
+
+	const definedSlugs = new Set(seriesDefinitions.map((series) => series.slug));
+	const inferredSeries = [...groupedPosts.entries()]
+		.filter(([slug]) => !definedSlugs.has(slug))
+		.map(([slug, seriesPosts]) => {
+			const sortedPosts = sortPostsBySeriesOrder(seriesPosts);
+			const firstPost = sortedPosts[0];
+			const title = firstPost?.data.seriesTitle || slug;
+			const description =
+				firstPost?.data.seriesDescription ||
+				firstPost?.data.description ||
+				`${title} 시리즈입니다.`;
+			const definition: SeriesDefinition = {
+				slug,
+				title,
+				description,
+				category: firstPost?.data.category ?? undefined,
+				status: "in-progress",
+				totalPosts: sortedPosts.length,
+				order: Number.MAX_SAFE_INTEGER,
+			};
+			return {
+				...definition,
+				postCount: sortedPosts.length,
+				totalPosts: sortedPosts.length,
+				posts: sortedPosts,
+				latestPost: getLatestPost(sortedPosts),
+				url: getSeriesUrl(slug),
+			};
+		});
+
+	return [...definedSeries, ...inferredSeries].sort((a, b) => {
+		const orderA = a.order ?? Number.MAX_SAFE_INTEGER;
+		const orderB = b.order ?? Number.MAX_SAFE_INTEGER;
+		if (orderA !== orderB) return orderA - orderB;
+		return a.title.localeCompare(b.title);
+	});
+}
+
+export async function getSeriesBySlug(
+	slug: string,
+): Promise<SeriesOverview | undefined> {
+	const seriesList = await getSeriesList();
+	return seriesList.find((series) => series.slug === slug);
 }

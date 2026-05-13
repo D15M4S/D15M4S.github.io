@@ -2,14 +2,14 @@
 title: "쿠버네티스 Warm-up 2 | Deployment, Service, HPA"
 published: 2026-03-09
 description: "1부에서 본 Namespace, Pod, Label, Selector 위에 Deployment, Service, HPA가 어떻게 올라오는지, Pod를 유지하고 연결하고 자동으로 늘리는 흐름을 제 기준으로 정리한 글입니다."
-image: "/assets/posts/k8s/k8s-sprint1-object-1_main.jpg"
+image: "/assets/posts/kubernetes/kubernetes-sprint1-object-1_main.jpg"
 tags: ["Kubernetes", "Deployment", "Service", "HPA"]
 category: "Kubernetes"
 draft: false
 lang: "ko"
 ---
 
-이번 글은 [쿠버네티스 Warm-up | Namespace, Pod, Label](/posts/k8s/sprint-1/k8s-sprint1-object/)에 이어, Deployment, Service, HPA를 정리해 본 글입니다.
+이번 글은 [쿠버네티스 Warm-up | Namespace, Pod, Label](/posts/kubernetes/sprint-1/kubernetes-sprint1-object/)에 이어, Deployment, Service, HPA를 정리해 본 글입니다.
 
 ### 들어가며
 
@@ -164,7 +164,7 @@ spec:
 
 지금 제 기준에서는 Deployment는 원하는 상태를 유지하는 리소스이고, Service는 그 Pod들에 안정적으로 접근하게 해 주는 리소스이며, HPA는 부하에 따라 그 수를 자동으로 조절하는 리소스입니다. 이 정도 감을 먼저 잡아 두면, Sprint 1에서 나오는 object 흐름도 훨씬 덜 갑작스럽게 느껴질 것 같습니다.
 
-다음 글에서는 [쿠버네티스 Warm-up 3 | ConfigMap, Secret, PV, PVC](/posts/k8s/sprint-1/k8s-warmup-part-3/)로 이어서, 애플리케이션이 실제 실행될 때 필요한 설정, 비밀값, 저장소를 어떻게 붙이는지 정리해 보려고 합니다.
+다음 글에서는 [쿠버네티스 Warm-up 3 | ConfigMap, Secret, PV, PVC](/posts/kubernetes/sprint-1/kubernetes-warmup-part-3/)로 이어서, 애플리케이션이 실제 실행될 때 필요한 설정, 비밀값, 저장소를 어떻게 붙이는지 정리해 보려고 합니다.
 
 ### 관련 공식 문서
 

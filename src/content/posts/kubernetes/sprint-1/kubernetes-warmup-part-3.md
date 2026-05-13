@@ -2,14 +2,14 @@
 title: "쿠버네티스 Warm-up 3 | ConfigMap, Secret, PV, PVC"
 published: 2026-03-10
 description: "2부에서 Deployment, Service, HPA로 Pod를 운영하는 흐름을 본 뒤, ConfigMap, Secret, PV, PVC가 설정과 비밀값, 저장소를 어떻게 붙이는지 제 기준으로 정리한 글입니다."
-image: "/assets/posts/k8s/k8s-sprint1-object-1_main.jpg"
+image: "/assets/posts/kubernetes/kubernetes-sprint1-object-1_main.jpg"
 tags: ["Kubernetes", "ConfigMap", "Secret", "PV", "PVC"]
 category: "Kubernetes"
 draft: false
 lang: "ko"
 ---
 
-이번 글은 [쿠버네티스 Warm-up 2 | Deployment, Service, HPA](/posts/k8s/sprint-1/k8s-warmup-part-2/)에 이어, `ConfigMap`, `Secret`, `PV`, `PVC`를 warm-up 관점에서 먼저 정리해 보는 글입니다.
+이번 글은 [쿠버네티스 Warm-up 2 | Deployment, Service, HPA](/posts/kubernetes/sprint-1/kubernetes-warmup-part-2/)에 이어, `ConfigMap`, `Secret`, `PV`, `PVC`를 warm-up 관점에서 먼저 정리해 보는 글입니다.
 
 2부에서 `Deployment`, `Service`, `HPA`를 보면서, Pod를 어떻게 유지하고 연결하고 늘릴지를 먼저 정리했습니다. 그런데 그 흐름만으로는 아직 실제 애플리케이션이 완성되지는 않습니다.
 

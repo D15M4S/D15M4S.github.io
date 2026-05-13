@@ -1,0 +1,133 @@
+---
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { Icon } from "astro-icon/components";
+import type { GetStaticPaths } from "astro";
+import { getSeriesList } from "../../utils/content-utils";
+import { getPostUrlBySlug } from "../../utils/url-utils";
+import ImageWrapper from "../../components/misc/ImageWrapper.astro";
+
+export const getStaticPaths = (async () => {
+	const seriesList = await getSeriesList();
+	return seriesList.map((series) => ({
+		params: { slug: series.slug },
+		props: { series },
+	}));
+}) satisfies GetStaticPaths;
+
+const { series } = Astro.props;
+
+const postsByOrder = new Map(
+	series.posts
+		.filter((post) => post.data.seriesOrder !== undefined)
+		.map((post) => [post.data.seriesOrder, post]),
+);
+
+const chapters =
+	series.chapters && series.chapters.length > 0
+		? series.chapters
+		: series.posts.map((post, index) => ({
+				order: post.data.seriesOrder ?? index + 1,
+				title: post.data.title,
+				description: post.data.description,
+			}));
+---
+
+<MainGridLayout title={series.title} description={series.description}>
+	<section class="card-base overflow-hidden mb-4">
+		{series.cover && (
+			<ImageWrapper
+				src={series.cover}
+				alt={`${series.title} cover`}
+				position={series.coverPosition}
+				class="w-full h-56 md:h-72"
+			/>
+		)}
+		<div class="px-6 md:px-9 py-7">
+			<div class="flex flex-wrap items-center gap-2 mb-4">
+			{series.category && (
+				<span class="text-xs font-bold rounded-full px-2.5 py-1 bg-[var(--btn-regular-bg)] text-[var(--btn-content)]">
+					{series.category}
+				</span>
+			)}
+			{series.totalPosts > 0 && (
+				<span class="text-xs font-bold rounded-full px-2.5 py-1 bg-[var(--btn-regular-bg)] text-50">
+					총 {series.totalPosts}편
+				</span>
+			)}
+		</div>
+
+		<h1 class="text-3xl md:text-[2.25rem]/[2.75rem] font-bold text-90 mb-3">
+			{series.title}
+		</h1>
+		<p class="text-50 leading-7 mb-6">
+			{series.description}
+		</p>
+
+		{series.tags && series.tags.length > 0 && (
+			<div class="flex flex-wrap gap-2 mb-7">
+				{series.tags.map((tag) => (
+					<span class="text-xs font-bold rounded-lg px-2.5 py-1.5 bg-[var(--btn-regular-bg)] text-[var(--btn-content)]">
+						#{tag}
+					</span>
+				))}
+			</div>
+		)}
+
+		{chapters.length > 0 && (
+			<div class="border-t border-dashed border-[var(--line-divider)] pt-6">
+				<div class="flex items-center gap-2 text-[var(--primary)] font-bold mb-4">
+					<Icon name="material-symbols:format-list-numbered-rounded" class="text-2xl" />
+					<span>연재 목차</span>
+				</div>
+
+				<div class="flex flex-col gap-3">
+					{chapters.map((chapter) => {
+						const post = postsByOrder.get(chapter.order);
+						const href = post ? getPostUrlBySlug(post.slug) : undefined;
+						return post && href ? (
+							<a
+								href={href}
+								class="group no-styling flex gap-4 rounded-2xl border border-[var(--line-divider)] bg-black/[0.015] dark:bg-white/[0.025] p-4 transition hover:border-[var(--primary)]/40 hover:bg-[var(--btn-card-bg-hover)] active:scale-[0.99]"
+							>
+								<div class="shrink-0 w-9 h-9 rounded-xl bg-[var(--btn-regular-bg)] text-[var(--btn-content)] flex items-center justify-center font-bold">
+									{chapter.order}
+								</div>
+								<div class="min-w-0 flex-1">
+									<div class="flex items-center gap-2 mb-1">
+										<h2 class="font-bold text-90 group-hover:text-[var(--primary)] transition">
+											{post.data.title}
+										</h2>
+									</div>
+									<p class="text-sm text-50 leading-6 line-clamp-2">
+										{post.data.description || chapter.description}
+									</p>
+								</div>
+								<Icon
+									name="material-symbols:chevron-right-rounded"
+									class="shrink-0 text-2xl text-[var(--primary)] opacity-70 transition group-hover:translate-x-1"
+								/>
+							</a>
+						) : (
+							<div class="flex gap-4 rounded-2xl border border-dashed border-[var(--line-divider)] p-4 opacity-75">
+								<div class="shrink-0 w-9 h-9 rounded-xl bg-[var(--btn-regular-bg)] text-50 flex items-center justify-center font-bold">
+									{chapter.order}
+								</div>
+								<div class="min-w-0 flex-1">
+									<div class="flex items-center gap-2 mb-1">
+										<h2 class="font-bold text-75">{chapter.title}</h2>
+									</div>
+									{chapter.description && (
+										<p class="text-sm text-50 leading-6 line-clamp-2">
+											{chapter.description}
+										</p>
+									)}
+								</div>
+							</div>
+						);
+					})}
+				</div>
+			</div>
+		)}
+		</div>
+	</section>
+</MainGridLayout>

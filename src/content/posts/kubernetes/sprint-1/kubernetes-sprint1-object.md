@@ -2,7 +2,7 @@
 title: "쿠버네티스 Warm-up | Namespace, Pod, Label"
 published: 2026-03-08
 description: "인프런 '쿠버네티스 어나더 클래스 - Sprint 1, 지상편'을 본격적으로 학습하기 전에, Namespace, Pod, Label, Selector처럼 먼저 감을 잡아 두면 좋겠다고 느낀 Kubernetes 기초 용어들을 제 기준으로 정리한 글입니다."
-image: "/assets/posts/k8s/k8s-sprint1-object-1_main.jpg"
+image: "/assets/posts/kubernetes/kubernetes-sprint1-object-1_main.jpg"
 tags: ["Kubernetes", "Namespace", "Pod", "Label"]
 category: "Kubernetes"
 draft: false
@@ -20,7 +20,7 @@ lang: "ko"
 ## 01. Namespace란 무엇일까요?
 
 <figure class="my-4">
-  <img src="/assets/posts/k8s/k8s-sprint1-object-1_2.png" alt="쿠버네티스 오브젝트 학습 순서를 정리한 강의 자료" />
+  <img src="/assets/posts/kubernetes/kubernetes-sprint1-object-1_2.png" alt="쿠버네티스 오브젝트 학습 순서를 정리한 강의 자료" />
   <figcaption class="mt-1 text-sm text-black/55 dark:text-white/55">
     이미지 출처: 인프런 <a href="https://www.inflearn.com/course/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%96%B4%EB%82%98%EB%8D%94-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%A7%80%EC%83%81%ED%8E%B8-sprint1/dashboard?cid=330869">쿠버네티스 어나더 클래스 - Sprint 1, 지상편</a> 강의자료
   </figcaption>
@@ -148,7 +148,7 @@ selector:
 
 지금 제 기준에서는 namespace는 소속을 나누는 작업 공간이고, pod는 실제로 container가 실행되는 단위이며, label은 리소스의 성격을 설명하는 정보이고, selector는 그 조건에 맞는 대상을 찾는 기준입니다. 최소한 이 정도 감을 먼저 잡아 두면, 이후 Sprint 1에서 다루는 object들도 훨씬 덜 낯설게 느껴질 것 같습니다.
 
-다음 글에서는 [쿠버네티스 Warm-up 2 | Deployment, Service, HPA](/posts/k8s/sprint-1/k8s-warmup-part-2/)로 이어서, Pod를 실제 운영 가능한 서비스 단위로 끌어올릴 때 필요한 리소스들을 정리해 보려고 합니다. 그다음 글에서는 [쿠버네티스 Warm-up 3 | ConfigMap, Secret, PV, PVC](/posts/k8s/sprint-1/k8s-warmup-part-3/)를 통해 설정, 비밀값, 저장소까지 이어서 정리해 보겠습니다.
+다음 글에서는 [쿠버네티스 Warm-up 2 | Deployment, Service, HPA](/posts/kubernetes/sprint-1/kubernetes-warmup-part-2/)로 이어서, Pod를 실제 운영 가능한 서비스 단위로 끌어올릴 때 필요한 리소스들을 정리해 보려고 합니다. 그다음 글에서는 [쿠버네티스 Warm-up 3 | ConfigMap, Secret, PV, PVC](/posts/kubernetes/sprint-1/kubernetes-warmup-part-3/)를 통해 설정, 비밀값, 저장소까지 이어서 정리해 보겠습니다.
 
 ### 관련 공식 문서
 

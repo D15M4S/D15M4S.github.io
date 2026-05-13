@@ -1,0 +1,21 @@
+---
+import SeriesSection from "@components/SeriesSection.astro";
+import SeriesPagination from "@components/control/SeriesPagination.astro";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { SERIES_PAGE_SIZE } from "../../constants/series";
+import { getSeriesList } from "../../utils/content-utils";
+
+const allSeries = await getSeriesList();
+const pageSeries = allSeries.slice(0, SERIES_PAGE_SIZE);
+const lastPage = Math.max(1, Math.ceil(allSeries.length / SERIES_PAGE_SIZE));
+---
+
+<MainGridLayout title="시리즈" description="주제별로 이어지는 학습 흐름을 모아봅니다.">
+	<SeriesSection
+		title="전체 시리즈"
+		description={`전체 ${allSeries.length}개 시리즈 중 현재 페이지에서 ${pageSeries.length}개를 보여줍니다.`}
+		seriesList={pageSeries}
+		showAllLink={false}
+	/>
+	<SeriesPagination currentPage={1} lastPage={lastPage} class="mx-auto onload-animation" />
+</MainGridLayout>

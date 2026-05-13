@@ -1,0 +1,66 @@
+---
+import { Icon } from "astro-icon/components";
+import { url } from "../../utils/url-utils";
+
+interface Props {
+	currentPage: number;
+	lastPage: number;
+	class?: string;
+}
+
+const { currentPage, lastPage } = Astro.props;
+const className = Astro.props.class;
+
+const getPageUrl = (page: number) => {
+	if (page <= 1) return url("/series/");
+	return url(`/series/page/${page}/`);
+};
+
+const pages = Array.from({ length: lastPage }, (_, index) => index + 1);
+const prevUrl = currentPage > 1 ? getPageUrl(currentPage - 1) : "";
+const nextUrl = currentPage < lastPage ? getPageUrl(currentPage + 1) : "";
+---
+
+{lastPage > 1 && (
+	<div class:list={[className, "flex flex-row gap-3 justify-center"]}>
+		<a
+			href={prevUrl}
+			aria-label={prevUrl ? "Previous Page" : null}
+			class:list={[
+				"btn-card overflow-hidden rounded-lg text-[var(--primary)] w-11 h-11",
+				{ disabled: !prevUrl },
+			]}
+		>
+			<Icon name="material-symbols:chevron-left-rounded" class="text-[1.75rem]" />
+		</a>
+
+		<div class="bg-[var(--card-bg)] flex flex-row rounded-lg items-center text-neutral-700 dark:text-neutral-300 font-bold">
+			{pages.map((page) =>
+				page === currentPage ? (
+					<div class="h-11 w-11 rounded-lg bg-[var(--primary)] flex items-center justify-center font-bold text-white dark:text-black/70">
+						{page}
+					</div>
+				) : (
+					<a
+						href={getPageUrl(page)}
+						aria-label={`Series page ${page}`}
+						class="btn-card w-11 h-11 rounded-lg overflow-hidden active:scale-[0.85]"
+					>
+						{page}
+					</a>
+				),
+			)}
+		</div>
+
+		<a
+			href={nextUrl}
+			aria-label={nextUrl ? "Next Page" : null}
+			class:list={[
+				"btn-card overflow-hidden rounded-lg text-[var(--primary)] w-11 h-11",
+				{ disabled: !nextUrl },
+			]}
+		>
+			<Icon name="material-symbols:chevron-right-rounded" class="text-[1.75rem]" />
+		</a>
+	</div>
+)}
